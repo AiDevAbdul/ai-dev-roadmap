@@ -1255,24 +1255,209 @@ clear</span>
 
           </div>
 
-          <div class="week-card m1">
-            <div class="week-number" style="color:var(--blue-light)">Week 2</div>
-            <div class="week-title">No-Code Workflow Automation</div>
-            <ul class="week-items">
-              <li>Make (Integromat) or n8n — visual workflow builders</li>
-              <li>Connect: Gmail, Slack, Google Sheets, Notion, HubSpot</li>
-              <li>Add AI steps inside automations via Claude API or OpenAI</li>
-              <li>Webhooks, triggers, conditional logic, error handling</li>
-            </ul>
+          <div class="week-card m1 week-expanded">
+
+            <div class="week-header-row">
+              <div>
+                <div class="week-number" style="color:var(--blue-light)">Week 2</div>
+                <div class="week-title">No-Code Workflow Automation</div>
+              </div>
+              <span class="week-badge">Days 8–14</span>
+            </div>
+
+            <div class="w1-grid">
+
+              <!-- ── Left: Make / n8n Setup ── -->
+              <div class="w1-col">
+
+                <div class="step-section">
+                  <div class="step-section-title">Day 1–2 · Choose Your Automation Platform</div>
+
+                  <div class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-body">
+                      <div class="step-label">Understand your options: Make vs. n8n vs. Zapier</div>
+                      <div class="prompt-box">
+                        <div class="prompt-box-label">Quick Comparison →</div>
+                        <div class="prompt-box-text"><strong>Make (Integromat):</strong> User-friendly, drag-drop, 1000+ apps, generous free tier. Best for visual learners. | <strong>n8n:</strong> Self-hosted, more control, better for custom logic, steeper curve. | <strong>Zapier:</strong> Most apps, pricey, simple workflows.</div>
+                      </div>
+                      <div class="step-note-box" style="margin-top:10px">For this roadmap: Start with <strong>Make</strong> — fastest to first automation.</div>
+                    </div>
+                  </div>
+
+                  <div class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-body">
+                      <div class="step-label">Sign up for Make</div>
+                      <div class="code-block">
+                        <span class="code-line">Visit make.com → Sign up with email → Create free account</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-body">
+                      <div class="step-label">Understand Make's interface: Scenarios, modules, connections</div>
+                      <div class="step-note-box">A <strong>Scenario</strong> = workflow. <strong>Modules</strong> = individual actions. <strong>Connections</strong> = authenticated links to apps like Gmail, Slack.</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="step-section">
+                  <div class="step-section-title">Day 2–3 · Connect Your First Apps</div>
+
+                  <div class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-body">
+                      <div class="step-label">Connect Gmail — allow Make to read/send emails</div>
+                      <div class="step-note-box">In Make: Click "Create a new scenario" → Add Gmail module → Click + to add connection → Authorize with your Google account.</div>
+                    </div>
+                  </div>
+
+                  <div class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-body">
+                      <div class="step-label">Connect Slack — for notifications &amp; message posting</div>
+                      <div class="step-note-box">In Make: Add Slack module → Create new connection → Install Make's Slack app to your workspace → Authorize.</div>
+                    </div>
+                  </div>
+
+                  <div class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-body">
+                      <div class="step-label">Connect Google Sheets — data storage &amp; sync</div>
+                      <div class="step-note-box">In Make: Add Google Sheets module → Authorize → Choose which sheet your scenario will read/write to.</div>
+                    </div>
+                  </div>
+
+                  <div class="step">
+                    <div class="step-num">4</div>
+                    <div class="step-body">
+                      <div class="step-label">Test each connection</div>
+                      <div class="step-note-box">Each module has a "Test" button. Click it to verify Make can access the app.</div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- ── Right: First Automation + AI Integration ── -->
+              <div class="w1-col">
+
+                <div class="step-section">
+                  <div class="step-section-title">Day 3–4 · Build Your First Automation (No AI yet)</div>
+
+                  <div class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-body">
+                      <div class="step-label">Scenario: When new email arrives, save to Sheets</div>
+                      <div class="step-note-box"><strong>Trigger:</strong> Gmail "Watch emails" → <strong>Action:</strong> Google Sheets "Add a row"</div>
+                    </div>
+                  </div>
+
+                  <div class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-body">
+                      <div class="step-label">Set up the Gmail trigger</div>
+                      <div class="prompt-box">
+                        <div class="prompt-box-label">Step-by-step →</div>
+                        <div class="prompt-box-text">Add Gmail module → Choose "Watch emails" trigger → Select label (e.g., "Leads") → Test connection</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-body">
+                      <div class="step-label">Add the Sheets action</div>
+                      <div class="prompt-box">
+                        <div class="prompt-box-label">Step-by-step →</div>
+                        <div class="prompt-box-text">Click + to add module → Google Sheets → "Add a row" → Select spreadsheet → Map fields: From: {{From}}, Subject: {{Subject}}, Body: {{Text}}</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="step">
+                    <div class="step-num">4</div>
+                    <div class="step-body">
+                      <div class="step-label">Test the full flow end-to-end</div>
+                      <div class="step-note-box">Send a test email to your label → Check Sheets → Verify row was added automatically</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="step-section">
+                  <div class="step-section-title">Day 4–5 · Add AI: Claude API in a Workflow</div>
+
+                  <div class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-body">
+                      <div class="step-label">Get your Anthropic API key</div>
+                      <div class="code-block">
+                        <span class="code-line">Visit console.anthropic.com → Create API key → Copy it</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-body">
+                      <div class="step-label">Add HTTP request module to call Claude API</div>
+                      <div class="prompt-box">
+                        <div class="prompt-box-label">In Make →</div>
+                        <div class="prompt-box-text">Add "HTTP" module → Set Method: POST → URL: https://api.anthropic.com/v1/messages → Headers: Authorization: Bearer YOUR_KEY, Content-Type: application/json</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-body">
+                      <div class="step-label">Build the request body for Claude</div>
+                      <div class="code-block">
+                        <span class="code-line">{
+  "model": "claude-opus-4-7",
+  "max_tokens": 1024,
+  "messages": [
+    {
+      "role": "user",
+      "content": "{{emailBody}}"
+    }
+  ]
+}</span>
+                        <button class="copy-btn" style="align-self:flex-start" onclick="copyCode(this)">Copy</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="step">
+                    <div class="step-num">4</div>
+                    <div class="step-body">
+                      <div class="step-label">Use Claude's response in your next action</div>
+                      <div class="step-note-box">After HTTP module completes, add another Sheets row that includes {{http.data.content[0].text}} — Claude's response</div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
             <div class="deliverable">
               <div class="deliverable-icon">⚡</div>
-              <div><strong>Deliverable</strong>Auto-generate social captions on new brief submission + auto-log leads to CRM</div>
+              <div><strong>Deliverable</strong> Two working Make scenarios: (1) New email → Sheets, (2) New email → Claude API for sentiment analysis → log result to Sheets</div>
             </div>
-            <div class="tag-row">
+
+            <div class="tag-row" style="margin-top:14px">
               <span class="tag tag-blue">Make</span>
               <span class="tag tag-blue">n8n</span>
-              <span class="tag tag-blue">Zapier</span>
+              <span class="tag tag-blue">Claude API</span>
+              <span class="tag tag-blue">Gmail</span>
+              <span class="tag tag-blue">Sheets</span>
             </div>
+
           </div>
 
           <div class="week-card m1">

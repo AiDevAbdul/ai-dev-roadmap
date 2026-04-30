@@ -1,0 +1,1916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Development & Automation Roadmap — 3 Months</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Kumbh+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset & Base ─────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      /* ── Ducker Creative Brand ────────────────────────────── */
+      --dc-orange:      #ff6b00;   /* primary CTA / logo accent   */
+      --dc-orange2:     #ff4500;   /* secondary orange-red         */
+      --dc-blue:        #007acc;   /* primary brand blue           */
+      --dc-cyan:        #00ccff;   /* hero / sky cyan              */
+      --dc-amber:       #f5a524;   /* warm gold / outcomes         */
+
+      --bg:          #080d14;
+      --bg2:         #0c1219;
+      --surface:     rgba(255,255,255,0.055);
+      --surface-h:   rgba(255,255,255,0.09);
+      --border:      rgba(255,255,255,0.10);
+      --border-h:    rgba(255,255,255,0.20);
+      --text:        #f0f0f5;
+      --text-2:      #a0a0b0;
+      --text-3:      #606075;
+
+      /* Month accent colors mapped to brand */
+      --blue:        #007acc;      /* Month 1 — brand blue        */
+      --blue-light:  #33b5e5;
+      --purple:      #00ccff;      /* Month 2 — brand cyan        */
+      --purple-light:#4dd9ff;
+      --teal:        #ff6b00;      /* Month 3 — brand orange      */
+      --teal-light:  #ff8c38;
+      --orange:      #ff4500;      /* Tools   — brand orange-red  */
+      --orange-light:#ff7048;
+      --green:       #f5a524;      /* Outcomes — brand amber/gold */
+      --green-light: #fbbf24;
+      --red:         #ef4444;
+      --yellow:      #fbbf24;
+      --radius:      16px;
+      --radius-sm:   10px;
+      --shadow:      0 8px 40px rgba(0,0,0,0.55);
+      --shadow-sm:   0 2px 12px rgba(0,0,0,0.3);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      font-size: 15px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Dot-grid background ──────────────────────────────────── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 25% 20%, rgba(0,122,204,0.14) 0%, transparent 50%),
+        radial-gradient(circle at 75% 80%, rgba(255,107,0,0.10) 0%, transparent 50%),
+        radial-gradient(rgba(255,255,255,0.035) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 28px 28px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── Window chrome ─────────────────────────────────────────── */
+    .window-wrapper {
+      position: relative;
+      z-index: 1;
+      max-width: 1100px;
+      margin: 40px auto 80px;
+      padding: 0 20px;
+    }
+
+    .mac-window {
+      background: rgba(20,20,32,0.85);
+      backdrop-filter: blur(40px) saturate(180%);
+      -webkit-backdrop-filter: blur(40px) saturate(180%);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: var(--shadow), 0 0 0 1px rgba(255,255,255,0.04) inset;
+      overflow: hidden;
+    }
+
+    /* Title bar */
+    .title-bar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 20px;
+      background: rgba(255,255,255,0.03);
+      border-bottom: 1px solid var(--border);
+      user-select: none;
+    }
+
+    .traffic-lights { display: flex; gap: 7px; }
+    .tl { width: 13px; height: 13px; border-radius: 50%; cursor: default; }
+    .tl-red    { background: #ff5f57; box-shadow: 0 0 6px rgba(255,95,87,0.5); }
+    .tl-yellow { background: #febc2e; box-shadow: 0 0 6px rgba(254,188,46,0.5); }
+    .tl-green  { background: #28c840; box-shadow: 0 0 6px rgba(40,200,64,0.5); }
+
+    .title-bar-label {
+      flex: 1;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-2);
+      letter-spacing: 0.01em;
+    }
+
+    .title-bar-actions { display: flex; gap: 8px; }
+
+    /* Download PDF button */
+    .btn-download {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      background: linear-gradient(135deg, var(--dc-orange) 0%, var(--dc-orange2) 100%);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 12.5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.15s, transform 0.1s;
+      letter-spacing: 0.01em;
+      box-shadow: 0 2px 12px rgba(255,107,0,0.35);
+    }
+    .btn-download:hover { opacity: 0.88; transform: translateY(-1px); }
+    .btn-download:active { transform: scale(0.97); }
+
+    /* ── Hero ─────────────────────────────────────────────────── */
+    .hero {
+      padding: 48px 48px 36px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      background: rgba(0,122,204,0.15);
+      border: 1px solid rgba(0,122,204,0.3);
+      border-radius: 20px;
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--blue-light);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-family: 'Kumbh Sans', 'Inter', sans-serif;
+      font-size: clamp(26px, 4vw, 42px);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      background: linear-gradient(135deg, #ffffff 20%, #ffd4a8 70%, #ff6b00 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      font-size: 15.5px;
+      color: var(--text-2);
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    /* ── Tab nav ──────────────────────────────────────────────── */
+    .tab-nav {
+      display: flex;
+      gap: 6px;
+      padding: 16px 48px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(0,0,0,0.2);
+    }
+
+    .tab-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 18px;
+      border: 1px solid transparent;
+      border-radius: var(--radius-sm);
+      background: transparent;
+      color: var(--text-2);
+      font-size: 13.5px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.18s ease;
+      white-space: nowrap;
+      font-family: inherit;
+    }
+    .tab-btn:hover { background: var(--surface-h); color: var(--text); }
+    .tab-btn.active {
+      background: var(--surface-h);
+      border-color: var(--border-h);
+      color: var(--text);
+    }
+
+    .tab-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* Month color accents */
+    .m1 { --accent: var(--blue);   --accent-l: var(--blue-light);   --accent-rgb: 0,122,204; }
+    .m2 { --accent: var(--purple); --accent-l: var(--purple-light); --accent-rgb: 0,204,255; }
+    .m3 { --accent: var(--teal);   --accent-l: var(--teal-light);   --accent-rgb: 255,107,0; }
+    .tools-tab { --accent: var(--orange); --accent-l: var(--orange-light); --accent-rgb: 255,69,0; }
+    .outcomes-tab { --accent: var(--green); }
+
+    .tab-btn.m1.active   { border-color: rgba(0,122,204,0.4);   color: var(--blue-light); }
+    .tab-btn.m2.active   { border-color: rgba(0,204,255,0.4);   color: var(--purple-light); }
+    .tab-btn.m3.active   { border-color: rgba(255,107,0,0.4);  color: var(--teal-light); }
+    .tab-btn.tools-tab.active   { border-color: rgba(255,69,0,0.4);  color: var(--orange-light); }
+    .tab-btn.outcomes-tab.active { border-color: rgba(245,165,36,0.4); color: var(--green-light); }
+
+    /* ── Content area ─────────────────────────────────────────── */
+    .content {
+      padding: 36px 48px 48px;
+    }
+
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; animation: fadeIn 0.25s ease; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── Month header ─────────────────────────────────────────── */
+    .month-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .month-meta { flex: 1; }
+    .month-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .month-title {
+      font-family: 'Kumbh Sans', 'Inter', sans-serif;
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .month-goal {
+      font-size: 13.5px;
+      color: var(--text-2);
+    }
+    .month-goal strong { color: var(--text); font-weight: 600; }
+
+    /* Progress bar */
+    .month-progress {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 6px;
+      min-width: 140px;
+    }
+    .progress-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-3);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .progress-bar {
+      width: 140px;
+      height: 5px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      border-radius: 10px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-l));
+      transition: width 0.6s ease;
+    }
+    .progress-weeks {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-2);
+    }
+
+    /* ── Weeks grid ───────────────────────────────────────────── */
+    .weeks-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    @media (max-width: 700px) {
+      .weeks-grid { grid-template-columns: 1fr; }
+      .tab-nav { padding: 12px 20px; overflow-x: auto; }
+      .content { padding: 24px 20px; }
+      .hero { padding: 32px 24px 24px; }
+      .month-header { flex-direction: column; }
+      .month-progress { align-items: flex-start; }
+    }
+
+    /* Week card */
+    .week-card {
+      background: var(--surface);
+      border: 1px solid rgba(var(--accent-rgb), 0.2);
+      border-radius: var(--radius);
+      padding: 20px;
+      transition: background 0.18s, border-color 0.18s, transform 0.18s;
+      position: relative;
+      overflow: hidden;
+    }
+    .week-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-l));
+      opacity: 0.55;
+      transition: opacity 0.18s;
+    }
+    .week-card:hover {
+      background: var(--surface-h);
+      border-color: rgba(var(--accent-rgb), 0.45);
+      transform: translateY(-2px);
+    }
+    .week-card:hover::before { opacity: 1; }
+
+    .week-number {
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      opacity: 1;
+    }
+
+    .week-title {
+      font-family: 'Kumbh Sans', 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--accent-l, var(--text));
+      margin-bottom: 12px;
+    }
+
+    .week-items {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 14px;
+    }
+
+    .week-items li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--text-2);
+      line-height: 1.5;
+    }
+
+    .week-items li::before {
+      content: '';
+      display: inline-block;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+      margin-top: 6px;
+      flex-shrink: 0;
+    }
+
+    .deliverable {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      padding: 10px 12px;
+      background: rgba(var(--accent-rgb),0.08);
+      border: 1px solid rgba(var(--accent-rgb),0.2);
+      border-radius: 8px;
+      font-size: 12.5px;
+      color: var(--text);
+      line-height: 1.4;
+    }
+    .deliverable-icon {
+      font-size: 14px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .deliverable strong {
+      font-weight: 600;
+      font-size: 10px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      opacity: 0.7;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    /* ── Tags ─────────────────────────────────────────────────── */
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 14px;
+    }
+    .tag {
+      padding: 3px 9px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+    }
+    .tag-blue   { background: rgba(0,122,204,0.15);  color: var(--blue-light); }
+    .tag-purple { background: rgba(0,204,255,0.12);  color: var(--purple-light); }
+    .tag-teal   { background: rgba(255,107,0,0.14);  color: var(--teal-light); }
+    .tag-orange { background: rgba(255,69,0,0.14);   color: var(--orange-light); }
+    .tag-green  { background: rgba(245,165,36,0.15); color: var(--dc-amber); }
+    .tag-red    { background: rgba(239,68,68,0.15);  color: #f87171; }
+
+    /* ── Section divider ──────────────────────────────────────── */
+    .section-divider {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin: 28px 0 20px;
+    }
+    .section-divider span {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-3);
+      white-space: nowrap;
+    }
+    .section-divider::before,
+    .section-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── Full-width card ──────────────────────────────────────── */
+    .full-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin-bottom: 16px;
+    }
+    .full-card h3 {
+      font-family: 'Kumbh Sans', 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 4px;
+      color: var(--text);
+    }
+    .full-card p {
+      font-size: 13px;
+      color: var(--text-2);
+      margin-bottom: 12px;
+    }
+
+    /* ── MCP / Agent special section ─────────────────────────── */
+    .agent-section {
+      background: linear-gradient(135deg,
+        rgba(0,122,204,0.08) 0%,
+        rgba(255,107,0,0.05) 100%);
+      border: 1px solid rgba(0,122,204,0.22);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin-top: 20px;
+    }
+    .agent-section-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Kumbh Sans', 'Inter', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--teal-light);
+      margin-bottom: 16px;
+    }
+    .agent-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    @media (max-width: 700px) {
+      .agent-grid { grid-template-columns: 1fr; }
+    }
+    .agent-card {
+      background: rgba(0,0,0,0.3);
+      border: 1px solid rgba(0,204,255,0.18);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+    }
+    .agent-card-icon {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+    .agent-card h4 {
+      font-family: 'Kumbh Sans', 'Inter', sans-serif;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .agent-card p {
+      font-size: 12.5px;
+      color: var(--text-2);
+      line-height: 1.5;
+    }
+
+    /* ── Tools table ──────────────────────────────────────────── */
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 14px;
+    }
+    .tool-category {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px;
+      transition: background 0.15s, border-color 0.15s;
+    }
+    .tool-category:hover {
+      background: var(--surface-h);
+      border-color: var(--border-h);
+    }
+    .tool-cat-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .tool-cat-icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+    }
+    .tool-cat-name {
+      font-size: 12.5px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text-2);
+    }
+    .tool-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+    .tool-tag {
+      padding: 3px 8px;
+      border-radius: 5px;
+      font-size: 12px;
+      font-weight: 500;
+      background: rgba(255,255,255,0.06);
+      color: var(--text-2);
+      border: 1px solid var(--border);
+    }
+
+    /* ── Outcomes ─────────────────────────────────────────────── */
+    .outcome-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .outcome-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 16px 18px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      transition: background 0.15s;
+    }
+    .outcome-item:hover { background: var(--surface-h); }
+    .outcome-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 800;
+      flex-shrink: 0;
+      background: rgba(245,165,36,0.15);
+      color: var(--dc-amber);
+    }
+    .outcome-text {
+      font-size: 14px;
+      color: var(--text-2);
+      line-height: 1.5;
+    }
+    .outcome-text strong {
+      display: block;
+      color: var(--text);
+      font-size: 14.5px;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    /* Weekly commitment card */
+    .commitment-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 24px;
+    }
+    @media (max-width: 700px) {
+      .commitment-grid { grid-template-columns: 1fr; }
+    }
+    .commit-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px;
+      text-align: center;
+    }
+    .commit-time {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      background: linear-gradient(135deg, var(--teal-light), var(--blue-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 4px;
+    }
+    .commit-label {
+      font-size: 12.5px;
+      color: var(--text-2);
+      font-weight: 500;
+    }
+
+    /* ── Print styles ─────────────────────────────────────────── */
+    @media print {
+      body { background: #fff !important; color: #000 !important; }
+      body::before { display: none; }
+      .mac-window {
+        box-shadow: none !important;
+        border: none !important;
+        background: #fff !important;
+        backdrop-filter: none !important;
+      }
+      .title-bar, .tab-nav { display: none !important; }
+      .tab-panel { display: block !important; }
+      .window-wrapper { max-width: 100%; margin: 0; padding: 0; }
+      .btn-download { display: none !important; }
+      .week-card, .tool-category, .outcome-item, .agent-card {
+        break-inside: avoid;
+        background: #f9f9fb !important;
+        border: 1px solid #e0e0e8 !important;
+        color: #000 !important;
+      }
+      .hero h1, .month-title, .week-title, .agent-card h4, .outcome-text strong {
+        color: #000 !important;
+        -webkit-text-fill-color: #000 !important;
+        background: none !important;
+      }
+      .hero p, .month-goal, .week-items li, .agent-card p, .outcome-text,
+      .commit-label, .week-number, .month-label {
+        color: #444 !important;
+      }
+      .content { padding: 24px !important; }
+      .section-divider span, .tool-cat-name, .progress-label { color: #888 !important; }
+      .commit-time { -webkit-text-fill-color: #000 !important; color: #000 !important; background: none !important; }
+      .deliverable { background: #f0f0f8 !important; border-color: #ccc !important; }
+      .agent-section { background: #fff3e6 !important; border-color: #ffbb88 !important; }
+      .week-items li::before { background: #555 !important; }
+      .week-body { display: block !important; }
+      .week-body-inner { overflow: visible !important; }
+      .step-section-body { display: block !important; }
+      .step-section-inner { overflow: visible !important; padding-top: 10px !important; }
+      .week-chevron, .section-chevron { display: none !important; }
+      .week-card-header { cursor: default !important; }
+      .code-block { background: #f0f0f5 !important; border-color: #ccc !important; }
+      .code-line { color: #1a1a2e !important; }
+      .cmd-comment { color: #888 !important; }
+      .copy-btn { display: none !important; }
+      .prompt-box { background: #fff3e6 !important; border-color: #ffbb88 !important; }
+      .prompt-box-label { color: #ff6b00 !important; }
+      .prompt-box-text { color: #1a1a2e !important; }
+      .step-note-box { background: #f4f4f8 !important; color: #444 !important; }
+      .formula-part, .prompt-formula { background: #fff3e6 !important; border-color: #ffbb88 !important; }
+      .step-section-title { color: #007acc !important; border-color: rgba(0,122,204,0.25) !important; }
+    }
+
+    /* ── Week Expanded (Week 1) ──────────────────────────────── */
+    .week-expanded { grid-column: 1 / -1; }
+
+    .week-header-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 22px;
+    }
+
+    .week-badge {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--blue-light);
+      background: rgba(0,122,204,0.12);
+      border: 1px solid rgba(0,122,204,0.25);
+      border-radius: 20px;
+      padding: 4px 12px;
+      white-space: nowrap;
+      margin-top: 4px;
+    }
+
+    .w1-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 700px) {
+      .w1-grid { grid-template-columns: 1fr; }
+    }
+
+    .step-section { margin-bottom: 22px; }
+
+    .step-section-title {
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--blue-light);
+      margin-bottom: 0;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(0,122,204,0.2);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .step { display: flex; gap: 11px; margin-bottom: 14px; align-items: flex-start; }
+
+    .step-num {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: rgba(0,122,204,0.15);
+      border: 1px solid rgba(0,122,204,0.3);
+      color: var(--blue-light);
+      font-size: 11px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .step-body { flex: 1; min-width: 0; }
+
+    .step-label {
+      font-size: 12.5px;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 7px;
+    }
+
+    .step-note-box {
+      font-size: 12px;
+      color: var(--text-2);
+      background: rgba(255,255,255,0.04);
+      border-radius: 6px;
+      padding: 7px 10px;
+      margin-bottom: 10px;
+    }
+
+    .code-block {
+      background: rgba(0,0,0,0.42);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 7px;
+      padding: 9px 12px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      justify-content: space-between;
+    }
+
+    .code-line {
+      font-family: 'SF Mono', 'Monaco', 'Cascadia Code', 'Fira Code', monospace;
+      font-size: 11.5px;
+      color: var(--dc-cyan);
+      line-height: 1.65;
+      white-space: pre-wrap;
+      word-break: break-all;
+      flex: 1;
+    }
+
+    .cmd-comment { color: var(--text-3); font-style: italic; }
+
+    .copy-btn {
+      flex-shrink: 0;
+      padding: 2px 10px;
+      font-size: 10.5px;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      background: rgba(0,122,204,0.14);
+      border: 1px solid rgba(0,122,204,0.28);
+      color: var(--blue-light);
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.15s;
+      white-space: nowrap;
+      line-height: 1.9;
+    }
+
+    .copy-btn:hover { background: rgba(0,122,204,0.24); border-color: rgba(0,122,204,0.5); }
+    .copy-btn.copied { background: rgba(245,165,36,0.14); border-color: rgba(245,165,36,0.3); color: var(--green-light); }
+
+    .prompt-box {
+      background: rgba(0,122,204,0.05);
+      border: 1px solid rgba(0,122,204,0.18);
+      border-radius: 7px;
+      padding: 10px 12px;
+      margin-bottom: 10px;
+    }
+
+    .prompt-box-label {
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--blue-light);
+      margin-bottom: 5px;
+    }
+
+    .prompt-box-text { font-size: 12px; color: var(--text-2); line-height: 1.55; }
+
+    .prompt-formula {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      background: rgba(0,122,204,0.06);
+      border: 1px solid rgba(0,122,204,0.15);
+      border-radius: 8px;
+      padding: 10px 12px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+
+    .formula-part { flex: 1; min-width: 80px; }
+
+    .formula-label {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--blue-light);
+      margin-bottom: 3px;
+    }
+
+    .formula-desc { font-size: 11px; color: var(--text-2); line-height: 1.4; }
+    .formula-plus { font-size: 13px; color: var(--text-3); font-weight: 700; flex-shrink: 0; padding-top: 12px; }
+
+    /* ── Accordion ───────────────────────────────────────────── */
+    .week-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .week-chevron {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      color: var(--text-3);
+      transition: transform 0.28s ease, color 0.18s;
+    }
+
+    .week-card.expanded .week-chevron { transform: rotate(180deg); color: var(--accent); }
+    .week-card.expanded { border-color: rgba(var(--accent-rgb), 0.45); }
+    .week-card.expanded::before { opacity: 1; }
+    .week-card.expanded:hover { transform: none; }
+
+    .week-body {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .week-body.open { grid-template-rows: 1fr; }
+
+    .week-body-inner { overflow: hidden; padding-top: 18px; }
+
+    .section-chevron {
+      width: 13px;
+      height: 13px;
+      flex-shrink: 0;
+      margin-left: 6px;
+      color: var(--blue-light);
+      opacity: 0.55;
+      transition: transform 0.22s ease, opacity 0.15s;
+    }
+
+    .step-section-title.expanded .section-chevron { transform: rotate(180deg); opacity: 1; }
+
+    .step-section-body {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.3s ease;
+    }
+
+    .step-section-body.open { grid-template-rows: 1fr; }
+    .step-section-inner { overflow: hidden; padding-top: 12px; }
+  </style>
+</head>
+<body>
+
+<div class="window-wrapper">
+  <div class="mac-window">
+
+    <!-- Title bar -->
+    <div class="title-bar">
+      <div class="traffic-lights">
+        <div class="tl tl-red"></div>
+        <div class="tl tl-yellow"></div>
+        <div class="tl tl-green"></div>
+      </div>
+      <div class="title-bar-label">AI Development & Automation Roadmap — Fast Track 3 Months</div>
+      <div class="title-bar-actions">
+        <button class="btn-download" onclick="window.print()">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          Download PDF
+        </button>
+      </div>
+    </div>
+
+    <!-- Hero -->
+    <div class="hero">
+      <div class="hero-badge">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+        Marketing Agency · Business Owners · Fast Track
+      </div>
+      <h1>AI Development &amp;<br>Automation Roadmap</h1>
+      <p>From beginner to intermediate in 3 months — building real tools, automating workflows, and leveraging AI agents with Claude Code, MCP, and more.</p>
+    </div>
+
+    <!-- Tab nav -->
+    <div class="tab-nav" role="tablist">
+      <button class="tab-btn m1 active" onclick="switchTab('m1',this)" role="tab">
+        <div class="tab-dot" style="background:var(--blue)"></div>
+        Month 1 — Foundations
+      </button>
+      <button class="tab-btn m2" onclick="switchTab('m2',this)" role="tab">
+        <div class="tab-dot" style="background:var(--purple)"></div>
+        Month 2 — Building with AI
+      </button>
+      <button class="tab-btn m3" onclick="switchTab('m3',this)" role="tab">
+        <div class="tab-dot" style="background:var(--teal)"></div>
+        Month 3 — Agents &amp; Systems
+      </button>
+      <button class="tab-btn tools-tab" onclick="switchTab('tools',this)" role="tab">
+        <div class="tab-dot" style="background:var(--orange)"></div>
+        Tools Stack
+      </button>
+      <button class="tab-btn outcomes-tab" onclick="switchTab('outcomes',this)" role="tab">
+        <div class="tab-dot" style="background:var(--green)"></div>
+        Outcomes
+      </button>
+    </div>
+
+    <!-- ── Month 1 ────────────────────────────────────────────── -->
+    <div class="content">
+      <div id="tab-m1" class="tab-panel m1 active">
+
+        <div class="month-header">
+          <div class="month-meta">
+            <div class="month-label" style="color:var(--blue-light)">Month 1 · Weeks 1–4</div>
+            <div class="month-title">Foundations &amp; Automation</div>
+            <div class="month-goal"><strong>Goal:</strong> Set up your environment, master prompt engineering, and automate real agency workflows.</div>
+          </div>
+          <div class="month-progress">
+            <div class="progress-label">Progress</div>
+            <div class="progress-bar"><div class="progress-fill" style="width:100%"></div></div>
+            <div class="progress-weeks" style="color:var(--blue-light)">4 Weeks</div>
+          </div>
+        </div>
+
+        <div class="weeks-grid">
+
+          <div class="week-card m1 week-expanded">
+
+            <div class="week-header-row">
+              <div>
+                <div class="week-number" style="color:var(--blue-light)">Week 1</div>
+                <div class="week-title">Environment Setup + Prompt Mastery</div>
+              </div>
+              <span class="week-badge">Days 1–7</span>
+            </div>
+
+            <div class="w1-grid">
+
+              <!-- ── Left: Install + Terminal ── -->
+              <div class="w1-col">
+
+                <div class="step-section">
+                  <div class="step-section-title">Day 1–2 · Install Everything</div>
+
+                  <div class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-body">
+                      <div class="step-label">Homebrew — macOS package manager</div>
+                      <div class="code-block">
+                        <span class="code-line">/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-body">
+                      <div class="step-label">Node.js — required for Claude Code CLI</div>
+                      <div class="code-block">
+                        <span class="code-line">brew install node</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                      </div>
+                      <div class="code-block" style="margin-top:6px">
+                        <span class="code-line">node --version &amp;&amp; npm --version</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-body">
+                      <div class="step-label">Git — version control</div>
+                      <div class="code-block">
+                        <span class="code-line">brew install git</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                      </div>
+                      <div class="code-block" style="margin-top:6px">
+                        <span class="code-line">git config --global user.name "Your Name"</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                      </div>
+                      <div class="code-block" style="margin-top:6px">
+                        <span class="code-line">git config --global user.email "you@email.com"</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="step">
+                    <div class="step-num">4</div>
+                    <div class="step-body">
+                      <div class="step-label">VS Code — code editor</div>
+                      <div class="code-block">
+                        <span class="code-line">brew install --cask visual-studio-code</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="step">
+                    <div class="step-num">5</div>
+                    <div class="step-body">
+                      <div class="step-label">Claude Code CLI — your AI dev partner</div>
+                      <div class="code-block">
+                        <span class="code-line">npm install -g @anthropic-ai/claude-code</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                      </div>
+                      <div class="code-block" style="margin-top:6px">
+                        <span class="code-line">claude</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="step-section">
+                  <div class="step-section-title">Day 2–3 · Terminal Basics (7 Commands)</div>
+                  <div class="step-note-box">These 7 commands cover 90% of daily terminal use.</div>
+                  <div class="code-block">
+                    <span class="code-line"><span class="cmd-comment"># Where am I?</span>
+pwd
+<span class="cmd-comment"># List files</span>
+ls
+<span class="cmd-comment"># Go into a folder</span>
+cd Desktop
+<span class="cmd-comment"># Go back one level</span>
+cd ..
+<span class="cmd-comment"># Create a folder</span>
+mkdir my-project
+<span class="cmd-comment"># Open VS Code here</span>
+code .
+<span class="cmd-comment"># Clear screen</span>
+clear</span>
+                    <button class="copy-btn" style="align-self:flex-start" onclick="copyCode(this)">Copy</button>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- ── Right: Claude Code + Prompt Engineering ── -->
+              <div class="w1-col">
+
+                <div class="step-section">
+                  <div class="step-section-title">Day 3–4 · First Claude Code Session</div>
+
+                  <div class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-body">
+                      <div class="step-label">Create project folder &amp; launch Claude</div>
+                      <div class="code-block">
+                        <span class="code-line">mkdir agency-ai &amp;&amp; cd agency-ai &amp;&amp; claude</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-body">
+                      <div class="step-label">Give Claude your first prompt</div>
+                      <div class="prompt-box">
+                        <div class="prompt-box-label">Paste this into Claude Code →</div>
+                        <div class="prompt-box-text">Create a file called prompts.md with 5 marketing agency use cases for AI — include brief writing, ad copy, client report, social caption, and competitor research. Add a one-line example for each.</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-body">
+                      <div class="step-label">Iterate — ask Claude to improve</div>
+                      <div class="prompt-box">
+                        <div class="prompt-box-label">Follow-up prompt →</div>
+                        <div class="prompt-box-text">Add 5 more prompts for: proposal writing, landing page headline, email sequence intro, campaign strategy overview, and monthly performance recap for a client meeting.</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="step">
+                    <div class="step-num">4</div>
+                    <div class="step-body">
+                      <div class="step-label">Useful Claude Code slash commands</div>
+                      <div class="code-block">
+                        <span class="code-line"><span class="cmd-comment"># Inside Claude Code:</span>
+/help      <span class="cmd-comment"># see all commands</span>
+/clear     <span class="cmd-comment"># reset conversation</span>
+/cost      <span class="cmd-comment"># see token usage</span></span>
+                        <button class="copy-btn" style="align-self:flex-start" onclick="copyCode(this)">Copy</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="step-section">
+                  <div class="step-section-title">Day 4–5 · Prompt Engineering Formula</div>
+                  <div class="step-note-box">Use this 3-part structure for every prompt — better structure = better output.</div>
+
+                  <div class="prompt-formula">
+                    <div class="formula-part">
+                      <div class="formula-label">Role</div>
+                      <div class="formula-desc">You are a direct-response copywriter…</div>
+                    </div>
+                    <div class="formula-plus">+</div>
+                    <div class="formula-part">
+                      <div class="formula-label">Task</div>
+                      <div class="formula-desc">Write 3 Facebook ad variations for…</div>
+                    </div>
+                    <div class="formula-plus">+</div>
+                    <div class="formula-part">
+                      <div class="formula-label">Format</div>
+                      <div class="formula-desc">Max 100 words each, include CTA</div>
+                    </div>
+                  </div>
+
+                  <div class="step-section-title">Real Prompt Examples</div>
+
+                  <div class="prompt-box">
+                    <div class="prompt-box-label">Facebook Ad Copy</div>
+                    <div class="prompt-box-text">You are a direct-response copywriter. Write 3 Facebook ad variations for a local HVAC company targeting homeowners 35–65 in Phoenix, AZ. Offer: $49 summer tune-up. Include hook, benefit, CTA. Max 100 words each.</div>
+                  </div>
+
+                  <div class="prompt-box">
+                    <div class="prompt-box-label">Monthly Report Intro</div>
+                    <div class="prompt-box-text">Write a 2-paragraph executive summary for a monthly marketing report. Results: impressions +42%, leads +18%, cost-per-lead down $12. Tone: confident, data-driven, non-technical. No jargon.</div>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+
+            <div class="deliverable">
+              <div class="deliverable-icon">🚀</div>
+              <div><strong>Deliverable</strong> A <code style="background:rgba(0,122,204,0.18);padding:1px 6px;border-radius:4px;font-size:11.5px;font-family:monospace">prompts.md</code> file with 10 tested agency prompts: brief, ad copy, proposal, report intro, 2× social caption, competitor research, email sequence, client update, landing page hook. Run every single one inside Claude Code.</div>
+            </div>
+
+            <div class="tag-row" style="margin-top:14px">
+              <span class="tag tag-blue">Homebrew</span>
+              <span class="tag tag-blue">Node.js</span>
+              <span class="tag tag-blue">Claude Code</span>
+              <span class="tag tag-blue">VS Code</span>
+              <span class="tag tag-blue">Prompt Engineering</span>
+            </div>
+
+          </div>
+
+          <div class="week-card m1">
+            <div class="week-number" style="color:var(--blue-light)">Week 2</div>
+            <div class="week-title">No-Code Workflow Automation</div>
+            <ul class="week-items">
+              <li>Make (Integromat) or n8n — visual workflow builders</li>
+              <li>Connect: Gmail, Slack, Google Sheets, Notion, HubSpot</li>
+              <li>Add AI steps inside automations via Claude API or OpenAI</li>
+              <li>Webhooks, triggers, conditional logic, error handling</li>
+            </ul>
+            <div class="deliverable">
+              <div class="deliverable-icon">⚡</div>
+              <div><strong>Deliverable</strong>Auto-generate social captions on new brief submission + auto-log leads to CRM</div>
+            </div>
+            <div class="tag-row">
+              <span class="tag tag-blue">Make</span>
+              <span class="tag tag-blue">n8n</span>
+              <span class="tag tag-blue">Zapier</span>
+            </div>
+          </div>
+
+          <div class="week-card m1">
+            <div class="week-number" style="color:var(--blue-light)">Week 3</div>
+            <div class="week-title">Google Workspace Scripting</div>
+            <ul class="week-items">
+              <li>Google Apps Script — runs in browser, no install required</li>
+              <li>Automate Sheets, Docs, Gmail, Calendar, Forms</li>
+              <li>Trigger scripts on form submission or schedule</li>
+              <li>Fetch external data with UrlFetchApp</li>
+            </ul>
+            <div class="deliverable">
+              <div class="deliverable-icon">📊</div>
+              <div><strong>Deliverable</strong>Auto-populate a client performance report from a Google Form submission</div>
+            </div>
+            <div class="tag-row">
+              <span class="tag tag-blue">Apps Script</span>
+              <span class="tag tag-blue">Google Sheets</span>
+            </div>
+          </div>
+
+          <div class="week-card m1">
+            <div class="week-number" style="color:var(--blue-light)">Week 4</div>
+            <div class="week-title">APIs &amp; Data Fundamentals</div>
+            <ul class="week-items">
+              <li>REST APIs, JSON, authentication (API keys, OAuth basics)</li>
+              <li>Call real APIs: Airtable, Google Analytics, HubSpot, Meta Ads</li>
+              <li>Use Claude Code to write and explain API scripts</li>
+              <li>Understand rate limits, pagination, and error codes</li>
+            </ul>
+            <div class="deliverable">
+              <div class="deliverable-icon">📈</div>
+              <div><strong>Deliverable</strong>Auto-pull live campaign metrics from APIs into a Google Sheet dashboard</div>
+            </div>
+            <div class="tag-row">
+              <span class="tag tag-blue">REST API</span>
+              <span class="tag tag-blue">Airtable</span>
+              <span class="tag tag-blue">Analytics</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ── Month 2 ──────────────────────────────────────────── -->
+      <div id="tab-m2" class="tab-panel m2">
+
+        <div class="month-header">
+          <div class="month-meta">
+            <div class="month-label" style="color:var(--purple-light)">Month 2 · Weeks 5–8</div>
+            <div class="month-title">Building with AI</div>
+            <div class="month-goal"><strong>Goal:</strong> Write and ship real tools using AI as your co-developer — from single pages to full web apps.</div>
+          </div>
+          <div class="month-progress">
+            <div class="progress-label">Progress</div>
+            <div class="progress-bar"><div class="progress-fill" style="width:100%; background:linear-gradient(90deg,var(--purple),var(--purple-light))"></div></div>
+            <div class="progress-weeks" style="color:var(--purple-light)">4 Weeks</div>
+          </div>
+        </div>
+
+        <div class="weeks-grid">
+
+          <div class="week-card m2">
+            <div class="week-number" style="color:var(--purple-light)">Week 5</div>
+            <div class="week-title">Vibe Coding Workflow</div>
+            <ul class="week-items">
+              <li>VS Code + GitHub Copilot for real-time autocomplete</li>
+              <li>Claude Code CLI — multi-file editing, context management</li>
+              <li>Learn to review AI code, catch bugs, iterate fast</li>
+              <li>Cursor IDE — tab completion, inline chat, composer mode</li>
+              <li>Using Bolt.new and v0 for rapid prototyping</li>
+            </ul>
+            <div class="deliverable">
+              <div class="deliverable-icon">🛠️</div>
+              <div><strong>Deliverable</strong>Client intake form with validation — data saved to Airtable via API</div>
+            </div>
+            <div class="tag-row">
+              <span class="tag tag-purple">Claude Code</span>
+              <span class="tag tag-purple">Cursor</span>
+              <span class="tag tag-purple">Copilot</span>
+            </div>
+          </div>
+
+          <div class="week-card m2">
+            <div class="week-number" style="color:var(--purple-light)">Week 6</div>
+            <div class="week-title">Frontend + Deployment</div>
+            <ul class="week-items">
+              <li>HTML, CSS, JavaScript — understand structure, not memorize</li>
+              <li>Next.js basics — pages, routing, components, Tailwind CSS</li>
+              <li>Deploy to Vercel in minutes with Git integration</li>
+              <li>Environment variables, domains, and preview deployments</li>
+            </ul>
+            <div class="deliverable">
+              <div class="deliverable-icon">🌐</div>
+              <div><strong>Deliverable</strong>Live agency landing page or internal tool page deployed on Vercel</div>
+            </div>
+            <div class="tag-row">
+              <span class="tag tag-purple">Next.js</span>
+              <span class="tag tag-purple">Tailwind</span>
+              <span class="tag tag-purple">Vercel</span>
+            </div>
+          </div>
+
+          <div class="week-card m2">
+            <div class="week-number" style="color:var(--purple-light)">Week 7</div>
+            <div class="week-title">Backend + Database</div>
+            <ul class="week-items">
+              <li>Supabase — database, auth, storage (no DevOps required)</li>
+              <li>API routes in Next.js — server-side logic</li>
+              <li>User authentication with Clerk or Supabase Auth</li>
+              <li>Row-level security, real-time subscriptions basics</li>
+            </ul>
+            <div class="deliverable">
+              <div class="deliverable-icon">🔐</div>
+              <div><strong>Deliverable</strong>Login-protected client portal showing live project status</div>
+            </div>
+            <div class="tag-row">
+              <span class="tag tag-purple">Supabase</span>
+              <span class="tag tag-purple">Clerk</span>
+              <span class="tag tag-purple">Auth</span>
+            </div>
+          </div>
+
+          <div class="week-card m2">
+            <div class="week-number" style="color:var(--purple-light)">Week 8</div>
+            <div class="week-title">AI-Powered Web App</div>
+            <ul class="week-items">
+              <li>Integrate Claude API or OpenAI into a Next.js app</li>
+              <li>Streaming responses, prompt templates, system prompts</li>
+              <li>Handle errors, rate limits, and loading states gracefully</li>
+              <li>Bake agency brand voice into the system prompt</li>
+            </ul>
+            <div class="deliverable">
+              <div class="deliverable-icon">🤖</div>
+              <div><strong>Deliverable</strong>Internal AI tool: brief generator, proposal drafter, or ad copy writer with brand voice</div>
+            </div>
+            <div class="tag-row">
+              <span class="tag tag-purple">Claude API</span>
+              <span class="tag tag-purple">Streaming</span>
+              <span class="tag tag-purple">OpenAI</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ── Month 3 ──────────────────────────────────────────── -->
+      <div id="tab-m3" class="tab-panel m3">
+
+        <div class="month-header">
+          <div class="month-meta">
+            <div class="month-label" style="color:var(--teal-light)">Month 3 · Weeks 9–12</div>
+            <div class="month-title">Agents, MCPs &amp; Full Systems</div>
+            <div class="month-goal"><strong>Goal:</strong> Build autonomous AI agents, connect tools via MCP, orchestrate subagents, and ship end-to-end automation systems.</div>
+          </div>
+          <div class="month-progress">
+            <div class="progress-label">Progress</div>
+            <div class="progress-bar"><div class="progress-fill" style="width:100%; background:linear-gradient(90deg,var(--teal),var(--teal-light))"></div></div>
+            <div class="progress-weeks" style="color:var(--teal-light)">4 Weeks</div>
+          </div>
+        </div>
+
+        <!-- MCP / Agents explainer -->
+        <div class="agent-section">
+          <div class="agent-section-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M3 12h3m12 0h3M12 3v3m0 12v3m-6.4-2.6L6.7 17m10.6-10.6L15.3 7M5.6 17.4l1.8-1.8m9.2-9.2 1.8-1.8"/></svg>
+            Core AI Concepts: Agents · Subagents · MCP
+          </div>
+          <div class="agent-grid">
+            <div class="agent-card">
+              <div class="agent-card-icon">🤖</div>
+              <h4>AI Agents</h4>
+              <p>Programs that perceive input, decide what to do, and take actions in a loop — using tools, memory, and goals rather than just responding to a single prompt.</p>
+            </div>
+            <div class="agent-card">
+              <div class="agent-card-icon">🪆</div>
+              <h4>Subagents</h4>
+              <p>Specialized agents spun up by a parent (orchestrator) agent to handle specific tasks in parallel — e.g., one researches, another writes, a third formats and sends.</p>
+            </div>
+            <div class="agent-card">
+              <div class="agent-card-icon">🔌</div>
+              <h4>MCP (Model Context Protocol)</h4>
+              <p>An open standard that lets AI models connect to external tools, databases, APIs, and services through a unified interface — like USB-C for AI capabilities.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-divider"><span>Week by Week</span></div>
+
+        <div class="weeks-grid">
+
+          <div class="week-card m3">
+            <div class="week-number" style="color:var(--teal-light)">Week 9</div>
+            <div class="week-title">AI Agents &amp; Tool Use</div>
+            <ul class="week-items">
+              <li>Understand the agent loop: perceive → plan → act → observe</li>
+              <li>Claude tool use / function calling — give AI the ability to act</li>
+              <li>Build a simple agent with 2–3 tools (web search, email, file)</li>
+              <li>Handle multi-turn conversations and memory in agent context</li>
+              <li>Error recovery — what happens when tools fail</li>
+            </ul>
+            <div class="deliverable">
+              <div class="deliverable-icon">🔎</div>
+              <div><strong>Deliverable</strong>Agent that researches a prospect company and drafts a personalized outreach proposal</div>
+            </div>
+            <div class="tag-row">
+              <span class="tag tag-teal">Tool Use</span>
+              <span class="tag tag-teal">Claude API</span>
+              <span class="tag tag-teal">Agents</span>
+            </div>
+          </div>
+
+          <div class="week-card m3">
+            <div class="week-number" style="color:var(--teal-light)">Week 10</div>
+            <div class="week-title">MCP Servers &amp; Connections</div>
+            <ul class="week-items">
+              <li>What is MCP — how it standardizes AI tool connections</li>
+              <li>Connect Claude Code to MCP servers: filesystem, browser, Slack</li>
+              <li>Configure MCP in Claude Code settings (claude_desktop_config.json)</li>
+              <li>Build a custom MCP server for your agency (client data, briefs)</li>
+              <li>Connect existing tools: Notion MCP, GitHub MCP, Airtable MCP</li>
+            </ul>
+            <div class="deliverable">
+              <div class="deliverable-icon">🔌</div>
+              <div><strong>Deliverable</strong>Claude connected via MCP to your agency's Notion workspace — query and update it by chat</div>
+            </div>
+            <div class="tag-row">
+              <span class="tag tag-teal">MCP</span>
+              <span class="tag tag-teal">Claude Code</span>
+              <span class="tag tag-teal">Notion</span>
+            </div>
+          </div>
+
+          <div class="week-card m3">
+            <div class="week-number" style="color:var(--teal-light)">Week 11</div>
+            <div class="week-title">Subagents &amp; Orchestration</div>
+            <ul class="week-items">
+              <li>Orchestrator vs. worker agent pattern — who directs who</li>
+              <li>Claude Code subagents — spawn parallel agents for subtasks</li>
+              <li>Pass context and results between agents cleanly</li>
+              <li>Build multi-agent pipelines using n8n or custom code</li>
+              <li>Rate limiting, cost control, and subagent error handling</li>
+            </ul>
+            <div class="deliverable">
+              <div class="deliverable-icon">🪆</div>
+              <div><strong>Deliverable</strong>Orchestrator agent that runs: Research Agent → Copywriter Agent → Formatter Agent for campaign briefs</div>
+            </div>
+            <div class="tag-row">
+              <span class="tag tag-teal">Subagents</span>
+              <span class="tag tag-teal">Orchestration</span>
+              <span class="tag tag-teal">Pipelines</span>
+            </div>
+          </div>
+
+          <div class="week-card m3">
+            <div class="week-number" style="color:var(--teal-light)">Week 12</div>
+            <div class="week-title">Internal Knowledge Base (RAG) + Full Stack Review</div>
+            <ul class="week-items">
+              <li>RAG (Retrieval-Augmented Generation) — AI answers from your own docs</li>
+              <li>Tools: Dify, Flowise, or Supabase + pgvector</li>
+              <li>Feed it SOPs, brand guidelines, past proposals, client notes</li>
+              <li>Audit all automations built — logging, monitoring, alerts</li>
+              <li>PostHog or Plausible for usage tracking on built tools</li>
+            </ul>
+            <div class="deliverable">
+              <div class="deliverable-icon">🧠</div>
+              <div><strong>Deliverable</strong>Private AI assistant trained on agency docs + 5+ live automation systems running the agency</div>
+            </div>
+            <div class="tag-row">
+              <span class="tag tag-teal">RAG</span>
+              <span class="tag tag-teal">Dify</span>
+              <span class="tag tag-teal">Flowise</span>
+              <span class="tag tag-teal">Supabase</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ── Tools Stack ──────────────────────────────────────── -->
+      <div id="tab-tools" class="tab-panel tools-tab">
+
+        <div class="month-header">
+          <div class="month-meta">
+            <div class="month-label" style="color:var(--orange-light)">Full Stack</div>
+            <div class="month-title">Tools &amp; Technologies</div>
+            <div class="month-goal">Every tool you'll use across the 3-month program — chosen for speed, power, and practical agency use.</div>
+          </div>
+        </div>
+
+        <div class="tools-grid">
+
+          <div class="tool-category">
+            <div class="tool-cat-header">
+              <div class="tool-cat-icon" style="background:rgba(0,122,204,0.15)">🤖</div>
+              <div class="tool-cat-name">AI Coding</div>
+            </div>
+            <div class="tool-tags">
+              <span class="tool-tag">Claude Code CLI</span>
+              <span class="tool-tag">GitHub Copilot</span>
+              <span class="tool-tag">Cursor IDE</span>
+              <span class="tool-tag">Bolt.new</span>
+              <span class="tool-tag">v0 by Vercel</span>
+            </div>
+          </div>
+
+          <div class="tool-category">
+            <div class="tool-cat-header">
+              <div class="tool-cat-icon" style="background:rgba(0,204,255,0.15)">⚡</div>
+              <div class="tool-cat-name">Automation</div>
+            </div>
+            <div class="tool-tags">
+              <span class="tool-tag">Make (Integromat)</span>
+              <span class="tool-tag">n8n</span>
+              <span class="tool-tag">Zapier</span>
+              <span class="tool-tag">Apps Script</span>
+            </div>
+          </div>
+
+          <div class="tool-category">
+            <div class="tool-cat-header">
+              <div class="tool-cat-icon" style="background:rgba(255,107,0,0.15)">🌐</div>
+              <div class="tool-cat-name">Frontend</div>
+            </div>
+            <div class="tool-tags">
+              <span class="tool-tag">Next.js</span>
+              <span class="tool-tag">Tailwind CSS</span>
+              <span class="tool-tag">Vercel</span>
+              <span class="tool-tag">React</span>
+            </div>
+          </div>
+
+          <div class="tool-category">
+            <div class="tool-cat-header">
+              <div class="tool-cat-icon" style="background:rgba(255,69,0,0.15)">🗄️</div>
+              <div class="tool-cat-name">Backend / Database</div>
+            </div>
+            <div class="tool-tags">
+              <span class="tool-tag">Supabase</span>
+              <span class="tool-tag">Airtable</span>
+              <span class="tool-tag">Clerk</span>
+              <span class="tool-tag">Railway</span>
+            </div>
+          </div>
+
+          <div class="tool-category">
+            <div class="tool-cat-header">
+              <div class="tool-cat-icon" style="background:rgba(255,107,0,0.15)">🔌</div>
+              <div class="tool-cat-name">MCP Servers</div>
+            </div>
+            <div class="tool-tags">
+              <span class="tool-tag">Filesystem MCP</span>
+              <span class="tool-tag">Browser MCP</span>
+              <span class="tool-tag">Notion MCP</span>
+              <span class="tool-tag">GitHub MCP</span>
+              <span class="tool-tag">Airtable MCP</span>
+              <span class="tool-tag">Slack MCP</span>
+            </div>
+          </div>
+
+          <div class="tool-category">
+            <div class="tool-cat-header">
+              <div class="tool-cat-icon" style="background:rgba(255,107,0,0.15)">🪆</div>
+              <div class="tool-cat-name">Agents &amp; Orchestration</div>
+            </div>
+            <div class="tool-tags">
+              <span class="tool-tag">Claude Agents</span>
+              <span class="tool-tag">Claude Subagents</span>
+              <span class="tool-tag">LangChain</span>
+              <span class="tool-tag">LangGraph</span>
+            </div>
+          </div>
+
+          <div class="tool-category">
+            <div class="tool-cat-header">
+              <div class="tool-cat-icon" style="background:rgba(245,165,36,0.15)">🧠</div>
+              <div class="tool-cat-name">AI Builders (RAG)</div>
+            </div>
+            <div class="tool-tags">
+              <span class="tool-tag">Dify</span>
+              <span class="tool-tag">Flowise</span>
+              <span class="tool-tag">pgvector</span>
+              <span class="tool-tag">LlamaIndex</span>
+            </div>
+          </div>
+
+          <div class="tool-category">
+            <div class="tool-cat-header">
+              <div class="tool-cat-icon" style="background:rgba(0,122,204,0.15)">🤝</div>
+              <div class="tool-cat-name">AI APIs</div>
+            </div>
+            <div class="tool-tags">
+              <span class="tool-tag">Anthropic Claude</span>
+              <span class="tool-tag">OpenAI</span>
+              <span class="tool-tag">Gemini</span>
+            </div>
+          </div>
+
+          <div class="tool-category">
+            <div class="tool-cat-header">
+              <div class="tool-cat-icon" style="background:rgba(245,165,36,0.15)">📊</div>
+              <div class="tool-cat-name">Analytics</div>
+            </div>
+            <div class="tool-tags">
+              <span class="tool-tag">PostHog</span>
+              <span class="tool-tag">Plausible</span>
+              <span class="tool-tag">Google Analytics</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="section-divider"><span>Weekly Commitment</span></div>
+
+        <div class="commitment-grid">
+          <div class="commit-card">
+            <div class="commit-time">2–3 hrs</div>
+            <div class="commit-label">Per Day Building &amp; Experimenting</div>
+          </div>
+          <div class="commit-card">
+            <div class="commit-time">1 hr</div>
+            <div class="commit-label">Per Week — Review What Broke, Fix It</div>
+          </div>
+          <div class="commit-card">
+            <div class="commit-time">1 hr</div>
+            <div class="commit-label">Per Week — Plan Next Week's Deliverable</div>
+          </div>
+        </div>
+
+        <div style="margin-top:16px; padding:16px 20px; background:rgba(255,69,0,0.08); border:1px solid rgba(255,69,0,0.2); border-radius:var(--radius-sm);">
+          <div style="font-size:13px; color:var(--orange-light); font-weight:700; margin-bottom:4px;">Rule: Every week ships something live.</div>
+          <div style="font-size:13px; color:var(--text-2);">No theory-only weeks. Every week ends with a deployed, usable deliverable that solves a real agency problem.</div>
+        </div>
+
+      </div>
+
+      <!-- ── Outcomes ────────────────────────────────────────── -->
+      <div id="tab-outcomes" class="tab-panel outcomes-tab">
+
+        <div class="month-header">
+          <div class="month-meta">
+            <div class="month-label" style="color:var(--dc-amber)">3-Month Results</div>
+            <div class="month-title">What You'll Be Able to Do</div>
+            <div class="month-goal">By the end of 3 months, you'll operate at a level most agencies take years to reach — independently building, automating, and scaling with AI.</div>
+          </div>
+        </div>
+
+        <div class="outcome-list">
+
+          <div class="outcome-item">
+            <div class="outcome-num">1</div>
+            <div class="outcome-text">
+              <strong>Build &amp; deploy internal web tools independently</strong>
+              Create client portals, dashboards, and internal tools using Next.js, Supabase, and Vercel — without waiting on a developer.
+            </div>
+          </div>
+
+          <div class="outcome-item">
+            <div class="outcome-num">2</div>
+            <div class="outcome-text">
+              <strong>Automate any repeatable agency workflow</strong>
+              Connect apps with Make/n8n, trigger AI tasks automatically, and replace hours of manual work with flows that run 24/7.
+            </div>
+          </div>
+
+          <div class="outcome-item">
+            <div class="outcome-num">3</div>
+            <div class="outcome-text">
+              <strong>Build and orchestrate AI agents with subagents</strong>
+              Design multi-agent pipelines where an orchestrator delegates research, writing, formatting, and delivery to specialized subagents in parallel.
+            </div>
+          </div>
+
+          <div class="outcome-item">
+            <div class="outcome-num">4</div>
+            <div class="outcome-text">
+              <strong>Connect AI to your entire tool stack via MCP</strong>
+              Use Model Context Protocol to give Claude direct access to Notion, GitHub, Airtable, Slack, and your own internal data — all through conversation.
+            </div>
+          </div>
+
+          <div class="outcome-item">
+            <div class="outcome-num">5</div>
+            <div class="outcome-text">
+              <strong>Integrate AI into client deliverables and operations</strong>
+              Embed AI into proposals, reports, content pipelines, and client portals — making AI a visible differentiator for your agency.
+            </div>
+          </div>
+
+          <div class="outcome-item">
+            <div class="outcome-num">6</div>
+            <div class="outcome-text">
+              <strong>Direct AI to write, debug, and ship code at speed</strong>
+              Use Claude Code CLI and Cursor to plan, write, review, and deploy code — treating AI as a senior developer pair-programming partner.
+            </div>
+          </div>
+
+          <div class="outcome-item">
+            <div class="outcome-num">7</div>
+            <div class="outcome-text">
+              <strong>Run meaningful agency operations on autopilot</strong>
+              Onboarding flows, reporting, lead follow-up, content scheduling, and brief generation — all automated with AI-powered systems.
+            </div>
+          </div>
+
+        </div>
+
+        <div class="section-divider"><span>Learning Principles</span></div>
+
+        <div class="weeks-grid">
+          <div class="full-card" style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:20px; margin:0">
+            <h3>Build to Solve Real Problems</h3>
+            <p>Every exercise automates an actual agency pain point — no toy projects.</p>
+            <div class="tag-row"><span class="tag tag-green">Principle 1</span></div>
+          </div>
+          <div class="full-card" style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:20px; margin:0">
+            <h3>Don't Memorize Code — Direct AI</h3>
+            <p>Learn to give precise instructions, review output, and iterate. The skill is delegation, not syntax.</p>
+            <div class="tag-row"><span class="tag tag-green">Principle 2</span></div>
+          </div>
+          <div class="full-card" style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:20px; margin:0">
+            <h3>One Workflow at a Time</h3>
+            <p>Fully automate one process before moving on. Depth beats breadth.</p>
+            <div class="tag-row"><span class="tag tag-green">Principle 3</span></div>
+          </div>
+          <div class="full-card" style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:20px; margin:0">
+            <h3>Document Everything</h3>
+            <p>Write brief SOPs for every automation — what it does, why, and how to maintain it.</p>
+            <div class="tag-row"><span class="tag tag-green">Principle 4</span></div>
+          </div>
+        </div>
+
+      </div>
+
+    </div><!-- /content -->
+  </div><!-- /mac-window -->
+</div><!-- /window-wrapper -->
+
+<script>
+  function switchTab(id, btn) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + id).classList.add('active');
+    btn.classList.add('active');
+  }
+
+  function copyCode(btn) {
+    const block = btn.closest('.code-block');
+    const raw = block.querySelector('.code-line').innerText;
+    const lines = raw.split('\n');
+    const minIndent = lines
+      .filter(l => l.trim().length > 0)
+      .reduce((min, l) => Math.min(min, l.match(/^(\s*)/)[1].length), Infinity);
+    const cleaned = lines.map(l => l.slice(minIndent)).join('\n').trim();
+    navigator.clipboard.writeText(cleaned).then(() => {
+      btn.textContent = 'Copied!';
+      btn.classList.add('copied');
+      setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
+    });
+  }
+
+  function mkChevron(cls) {
+    const ns = 'http://www.w3.org/2000/svg';
+    const svg = document.createElementNS(ns, 'svg');
+    svg.setAttribute('class', cls);
+    svg.setAttribute('viewBox', '0 0 24 24');
+    svg.setAttribute('fill', 'none');
+    svg.setAttribute('stroke', 'currentColor');
+    svg.setAttribute('stroke-width', '2.5');
+    svg.setAttribute('stroke-linecap', 'round');
+    svg.setAttribute('stroke-linejoin', 'round');
+    const p = document.createElementNS(ns, 'polyline');
+    p.setAttribute('points', '6 9 12 15 18 9');
+    svg.appendChild(p);
+    return svg;
+  }
+
+  function initAccordion() {
+    /* ── Level 1: Week cards ─────────────────────────────── */
+    document.querySelectorAll('.week-card').forEach(card => {
+      const existingHdrRow = card.querySelector('.week-header-row');
+      const weekNum        = card.querySelector('.week-number');
+      const weekTitle      = card.querySelector('.week-title');
+
+      const hdr = document.createElement('div');
+      hdr.className = 'week-card-header';
+
+      if (existingHdrRow) {
+        card.insertBefore(hdr, existingHdrRow);
+        hdr.appendChild(existingHdrRow);
+      } else {
+        const grp = document.createElement('div');
+        card.insertBefore(hdr, weekNum);
+        grp.appendChild(weekNum);
+        grp.appendChild(weekTitle);
+        hdr.appendChild(grp);
+      }
+      hdr.appendChild(mkChevron('week-chevron'));
+
+      const body  = document.createElement('div');
+      body.className = 'week-body';
+      const inner = document.createElement('div');
+      inner.className = 'week-body-inner';
+      body.appendChild(inner);
+      while (card.children.length > 1) inner.appendChild(card.children[1]);
+      card.appendChild(body);
+
+      hdr.addEventListener('click', () => {
+        const open = body.classList.toggle('open');
+        card.classList.toggle('expanded', open);
+      });
+    });
+
+    /* ── Level 2: Day / step sections ───────────────────── */
+    document.querySelectorAll('.step-section').forEach(section => {
+      const title = section.querySelector('.step-section-title');
+      if (!title) return;
+
+      title.appendChild(mkChevron('section-chevron'));
+
+      const body  = document.createElement('div');
+      body.className = 'step-section-body';
+      const inner = document.createElement('div');
+      inner.className = 'step-section-inner';
+      body.appendChild(inner);
+      while (section.children.length > 1) inner.appendChild(section.children[1]);
+      section.appendChild(body);
+
+      title.addEventListener('click', e => {
+        e.stopPropagation();
+        const open = body.classList.toggle('open');
+        title.classList.toggle('expanded', open);
+      });
+    });
+  }
+
+  initAccordion();
+</script>
+
+</body>
+</html>

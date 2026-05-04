@@ -1,11 +1,18 @@
-# CLAUDE.md — AI Dev Roadmap (Ducker Creative)
+# CLAUDE.md — AI Driven Development Course (Ducker Creative)
 
 ## Project Overview
 
-Single-page HTML document: a 3-month AI Development & Automation Roadmap for marketing agency owners. Built for Ducker Creative client delivery. No build step — pure HTML/CSS/JS, open directly in a browser or print to PDF.
+Single-page HTML document: a 10-week intensive course on AI Driven Development — teaching the AI Agent Factory paradigm, production agents, MCP integration, and autonomous system design. No build step — pure HTML/CSS/JS, open directly in a browser or print to PDF.
 
-**File:** `ai-roadmap.html`  
+**File:** `public/index.html`  
 **Brand reference:** `ducker-brand-and-patterns.md`
+
+**Course Structure:**
+- Weeks 1–2: The AI Agent Factory Paradigm (Foundations)
+- Weeks 3–4: General Agents & Communication Mastery (Building)
+- Weeks 6–7: Context Engineering & Spec-Driven Development (Production Quality)
+- Weeks 8–9: Seven Principles & Team Workflows (Principles & Advanced)
+- Week 10 & Outcomes: Integration, Deployment & Career Path
 
 ---
 
@@ -23,13 +30,13 @@ Single-page HTML document: a 3-month AI Development & Automation Roadmap for mar
 
 **Never use:** Tailwind color values (`59,130,246` · `139,92,246` · `34,197,94` · `20,184,166` · `249,115,22`) — these are off-brand. Replace with brand equivalents above.
 
-### Month accent progression
+### Week accent progression
 ```
-Month 1 → --blue   (#007acc)   --accent-rgb: 0,122,204
-Month 2 → --purple (#00ccff)   --accent-rgb: 0,204,255   (brand cyan, not purple)
-Month 3 → --teal   (#ff6b00)   --accent-rgb: 255,107,0   (brand orange, not teal)
-Tools   → --orange (#ff4500)   --accent-rgb: 255,69,0
-Outcomes→ --green  (#f5a524)   --accent-rgb: 245,165,36  (brand amber, not green)
+Weeks 1–2 → --blue   (#007acc)   --accent-rgb: 0,122,204   (Foundations)
+Weeks 3–4 → --purple (#00ccff)   --accent-rgb: 0,204,255   (brand cyan, Building)
+Weeks 6–7 → --teal   (#ff6b00)   --accent-rgb: 255,107,0   (brand orange, Production)
+Weeks 8–9 → --orange (#ff4500)   --accent-rgb: 255,69,0    (Principles)
+Week 10   → --green  (#f5a524)   --accent-rgb: 245,165,36  (brand amber, Outcomes)
 ```
 
 ### Fonts
@@ -50,7 +57,14 @@ background: linear-gradient(135deg, #ff6b00 0%, #ff4500 100%);
 The entire page is one self-contained HTML file with inline `<style>` and `<script>`. No dependencies except Google Fonts.
 
 ### Tab system
-Five tabs: `m1`, `m2`, `m3`, `tools`, `outcomes`. Switched via `switchTab(id, btn)`. Each tab panel has class `tab-panel` + the tab id.
+Five tabs: `w1`, `w2`, `w3`, `w4`, `outcomes`. Switched via `switchTab(id, btn)`. Each tab panel has class `tab-panel` + the tab id.
+
+**Tab IDs and content:**
+- `w1` — Weeks 1–2 (Foundations): AI Agent Factory Paradigm
+- `w2` — Weeks 3–4 (Building): General Agents & Communication
+- `w3` — Weeks 6–7 (Production): Context Engineering & Spec-Driven Development
+- `w4` — Weeks 8–9 (Principles): Seven Principles & Team Workflows
+- `outcomes` — Week 10 & Learning Outcomes
 
 ### Month accent system
 Each week card carries a class (`m1`, `m2`, `m3`) that sets three CSS custom properties:

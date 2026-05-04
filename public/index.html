@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Development & Automation Roadmap — 3 Months</title>
+  <title>AI Driven Development — 10-Week Course</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Kumbh+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
@@ -30,13 +30,13 @@
       --text-3:      #606075;
 
       /* Month accent colors mapped to brand */
-      --blue:        #007acc;      /* Month 1 — brand blue        */
+      --blue:        #007acc;      /* Week 1-2 — brand blue        */
       --blue-light:  #33b5e5;
-      --purple:      #00ccff;      /* Month 2 — brand cyan        */
+      --purple:      #00ccff;      /* Week 3-5 — brand cyan        */
       --purple-light:#4dd9ff;
-      --teal:        #ff6b00;      /* Month 3 — brand orange      */
+      --teal:        #ff6b00;      /* Week 6-9 — brand orange      */
       --teal-light:  #ff8c38;
-      --orange:      #ff4500;      /* Tools   — brand orange-red  */
+      --orange:      #ff4500;      /* Week 10   — brand orange-red */
       --orange-light:#ff7048;
       --green:       #f5a524;      /* Outcomes — brand amber/gold */
       --green-light: #fbbf24;
@@ -495,111 +495,6 @@
       margin-bottom: 12px;
     }
 
-    /* ── MCP / Agent special section ─────────────────────────── */
-    .agent-section {
-      background: linear-gradient(135deg,
-        rgba(0,122,204,0.08) 0%,
-        rgba(255,107,0,0.05) 100%);
-      border: 1px solid rgba(0,122,204,0.22);
-      border-radius: var(--radius);
-      padding: 24px;
-      margin-top: 20px;
-    }
-    .agent-section-title {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-family: 'Kumbh Sans', 'Inter', sans-serif;
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--teal-light);
-      margin-bottom: 16px;
-    }
-    .agent-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-    }
-    @media (max-width: 700px) {
-      .agent-grid { grid-template-columns: 1fr; }
-    }
-    .agent-card {
-      background: rgba(0,0,0,0.3);
-      border: 1px solid rgba(0,204,255,0.18);
-      border-radius: var(--radius-sm);
-      padding: 16px;
-    }
-    .agent-card-icon {
-      font-size: 22px;
-      margin-bottom: 10px;
-    }
-    .agent-card h4 {
-      font-family: 'Kumbh Sans', 'Inter', sans-serif;
-      font-size: 13.5px;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 6px;
-    }
-    .agent-card p {
-      font-size: 12.5px;
-      color: var(--text-2);
-      line-height: 1.5;
-    }
-
-    /* ── Tools table ──────────────────────────────────────────── */
-    .tools-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 14px;
-    }
-    .tool-category {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 18px;
-      transition: background 0.15s, border-color 0.15s;
-    }
-    .tool-category:hover {
-      background: var(--surface-h);
-      border-color: var(--border-h);
-    }
-    .tool-cat-header {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 12px;
-    }
-    .tool-cat-icon {
-      width: 30px;
-      height: 30px;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 15px;
-    }
-    .tool-cat-name {
-      font-size: 12.5px;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: var(--text-2);
-    }
-    .tool-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 5px;
-    }
-    .tool-tag {
-      padding: 3px 8px;
-      border-radius: 5px;
-      font-size: 12px;
-      font-weight: 500;
-      background: rgba(255,255,255,0.06);
-      color: var(--text-2);
-      border: 1px solid var(--border);
-    }
-
     /* ── Outcomes ─────────────────────────────────────────────── */
     .outcome-list {
       display: flex;
@@ -643,39 +538,6 @@
       margin-bottom: 2px;
     }
 
-    /* Weekly commitment card */
-    .commitment-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin-top: 24px;
-    }
-    @media (max-width: 700px) {
-      .commitment-grid { grid-template-columns: 1fr; }
-    }
-    .commit-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 18px;
-      text-align: center;
-    }
-    .commit-time {
-      font-size: 26px;
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      background: linear-gradient(135deg, var(--teal-light), var(--blue-light));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 4px;
-    }
-    .commit-label {
-      font-size: 12.5px;
-      color: var(--text-2);
-      font-weight: 500;
-    }
-
     /* ── Print styles ─────────────────────────────────────────── */
     @media print {
       body { background: #fff !important; color: #000 !important; }
@@ -690,272 +552,25 @@
       .tab-panel { display: block !important; }
       .window-wrapper { max-width: 100%; margin: 0; padding: 0; }
       .btn-download { display: none !important; }
-      .week-card, .tool-category, .outcome-item, .agent-card {
+      .week-card {
         break-inside: avoid;
         background: #f9f9fb !important;
         border: 1px solid #e0e0e8 !important;
         color: #000 !important;
       }
-      .hero h1, .month-title, .week-title, .agent-card h4, .outcome-text strong {
+      .hero h1, .month-title, .week-title {
         color: #000 !important;
         -webkit-text-fill-color: #000 !important;
         background: none !important;
       }
-      .hero p, .month-goal, .week-items li, .agent-card p, .outcome-text,
-      .commit-label, .week-number, .month-label {
+      .hero p, .month-goal, .week-items li, .outcome-text {
         color: #444 !important;
       }
       .content { padding: 24px !important; }
-      .section-divider span, .tool-cat-name, .progress-label { color: #888 !important; }
-      .commit-time { -webkit-text-fill-color: #000 !important; color: #000 !important; background: none !important; }
+      .section-divider span { color: #888 !important; }
       .deliverable { background: #f0f0f8 !important; border-color: #ccc !important; }
-      .agent-section { background: #fff3e6 !important; border-color: #ffbb88 !important; }
       .week-items li::before { background: #555 !important; }
-      .week-body { display: block !important; }
-      .week-body-inner { overflow: visible !important; }
-      .step-section-body { display: block !important; }
-      .step-section-inner { overflow: visible !important; padding-top: 10px !important; }
-      .week-chevron, .section-chevron { display: none !important; }
-      .week-card-header { cursor: default !important; }
-      .code-block { background: #f0f0f5 !important; border-color: #ccc !important; }
-      .code-line { color: #1a1a2e !important; }
-      .cmd-comment { color: #888 !important; }
-      .copy-btn { display: none !important; }
-      .prompt-box { background: #fff3e6 !important; border-color: #ffbb88 !important; }
-      .prompt-box-label { color: #ff6b00 !important; }
-      .prompt-box-text { color: #1a1a2e !important; }
-      .step-note-box { background: #f4f4f8 !important; color: #444 !important; }
-      .formula-part, .prompt-formula { background: #fff3e6 !important; border-color: #ffbb88 !important; }
-      .step-section-title { color: #007acc !important; border-color: rgba(0,122,204,0.25) !important; }
     }
-
-    /* ── Week Expanded (Week 1) ──────────────────────────────── */
-    .week-expanded { grid-column: 1 / -1; }
-
-    .week-header-row {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      margin-bottom: 22px;
-    }
-
-    .week-badge {
-      font-size: 11px;
-      font-weight: 600;
-      color: var(--blue-light);
-      background: rgba(0,122,204,0.12);
-      border: 1px solid rgba(0,122,204,0.25);
-      border-radius: 20px;
-      padding: 4px 12px;
-      white-space: nowrap;
-      margin-top: 4px;
-    }
-
-    .w1-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 28px;
-      margin-bottom: 20px;
-    }
-
-    @media (max-width: 700px) {
-      .w1-grid { grid-template-columns: 1fr; }
-    }
-
-    .step-section { margin-bottom: 22px; }
-
-    .step-section-title {
-      font-size: 10.5px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--blue-light);
-      margin-bottom: 0;
-      padding-bottom: 8px;
-      border-bottom: 1px solid rgba(0,122,204,0.2);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      cursor: pointer;
-      user-select: none;
-    }
-
-    .step { display: flex; gap: 11px; margin-bottom: 14px; align-items: flex-start; }
-
-    .step-num {
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      background: rgba(0,122,204,0.15);
-      border: 1px solid rgba(0,122,204,0.3);
-      color: var(--blue-light);
-      font-size: 11px;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      margin-top: 1px;
-    }
-
-    .step-body { flex: 1; min-width: 0; }
-
-    .step-label {
-      font-size: 12.5px;
-      font-weight: 500;
-      color: var(--text);
-      margin-bottom: 7px;
-    }
-
-    .step-note-box {
-      font-size: 12px;
-      color: var(--text-2);
-      background: rgba(255,255,255,0.04);
-      border-radius: 6px;
-      padding: 7px 10px;
-      margin-bottom: 10px;
-    }
-
-    .code-block {
-      background: rgba(0,0,0,0.42);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 7px;
-      padding: 9px 12px;
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      justify-content: space-between;
-    }
-
-    .code-line {
-      font-family: 'SF Mono', 'Monaco', 'Cascadia Code', 'Fira Code', monospace;
-      font-size: 11.5px;
-      color: var(--dc-cyan);
-      line-height: 1.65;
-      white-space: pre-wrap;
-      word-break: break-all;
-      flex: 1;
-    }
-
-    .cmd-comment { color: var(--text-3); font-style: italic; }
-
-    .copy-btn {
-      flex-shrink: 0;
-      padding: 2px 10px;
-      font-size: 10.5px;
-      font-weight: 600;
-      font-family: 'Inter', sans-serif;
-      background: rgba(0,122,204,0.14);
-      border: 1px solid rgba(0,122,204,0.28);
-      color: var(--blue-light);
-      border-radius: 5px;
-      cursor: pointer;
-      transition: all 0.15s;
-      white-space: nowrap;
-      line-height: 1.9;
-    }
-
-    .copy-btn:hover { background: rgba(0,122,204,0.24); border-color: rgba(0,122,204,0.5); }
-    .copy-btn.copied { background: rgba(245,165,36,0.14); border-color: rgba(245,165,36,0.3); color: var(--green-light); }
-
-    .prompt-box {
-      background: rgba(0,122,204,0.05);
-      border: 1px solid rgba(0,122,204,0.18);
-      border-radius: 7px;
-      padding: 10px 12px;
-      margin-bottom: 10px;
-    }
-
-    .prompt-box-label {
-      font-size: 9.5px;
-      font-weight: 700;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-      color: var(--blue-light);
-      margin-bottom: 5px;
-    }
-
-    .prompt-box-text { font-size: 12px; color: var(--text-2); line-height: 1.55; }
-
-    .prompt-formula {
-      display: flex;
-      align-items: flex-start;
-      gap: 6px;
-      background: rgba(0,122,204,0.06);
-      border: 1px solid rgba(0,122,204,0.15);
-      border-radius: 8px;
-      padding: 10px 12px;
-      margin-bottom: 12px;
-      flex-wrap: wrap;
-    }
-
-    .formula-part { flex: 1; min-width: 80px; }
-
-    .formula-label {
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--blue-light);
-      margin-bottom: 3px;
-    }
-
-    .formula-desc { font-size: 11px; color: var(--text-2); line-height: 1.4; }
-    .formula-plus { font-size: 13px; color: var(--text-3); font-weight: 700; flex-shrink: 0; padding-top: 12px; }
-
-    /* ── Accordion ───────────────────────────────────────────── */
-    .week-card-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      cursor: pointer;
-      user-select: none;
-    }
-
-    .week-chevron {
-      width: 18px;
-      height: 18px;
-      flex-shrink: 0;
-      color: var(--text-3);
-      transition: transform 0.28s ease, color 0.18s;
-    }
-
-    .week-card.expanded .week-chevron { transform: rotate(180deg); color: var(--accent); }
-    .week-card.expanded { border-color: rgba(var(--accent-rgb), 0.45); }
-    .week-card.expanded::before { opacity: 1; }
-    .week-card.expanded:hover { transform: none; }
-
-    .week-body {
-      display: grid;
-      grid-template-rows: 0fr;
-      transition: grid-template-rows 0.38s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .week-body.open { grid-template-rows: 1fr; }
-
-    .week-body-inner { overflow: hidden; padding-top: 18px; }
-
-    .section-chevron {
-      width: 13px;
-      height: 13px;
-      flex-shrink: 0;
-      margin-left: 6px;
-      color: var(--blue-light);
-      opacity: 0.55;
-      transition: transform 0.22s ease, opacity 0.15s;
-    }
-
-    .step-section-title.expanded .section-chevron { transform: rotate(180deg); opacity: 1; }
-
-    .step-section-body {
-      display: grid;
-      grid-template-rows: 0fr;
-      transition: grid-template-rows 0.3s ease;
-    }
-
-    .step-section-body.open { grid-template-rows: 1fr; }
-    .step-section-inner { overflow: hidden; padding-top: 12px; }
   </style>
 </head>
 <body>
@@ -970,7 +585,7 @@
         <div class="tl tl-yellow"></div>
         <div class="tl tl-green"></div>
       </div>
-      <div class="title-bar-label">AI Development & Automation Roadmap — Fast Track 3 Months</div>
+      <div class="title-bar-label">AI Driven Development — 10-Week Intensive</div>
       <div class="title-bar-actions">
         <button class="btn-download" onclick="window.print()">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -985,1008 +600,418 @@
     <div class="hero">
       <div class="hero-badge">
         <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
-        Marketing Agency · Business Owners · Fast Track
+        Intermediate+ · Hands-On · Production-Ready
       </div>
-      <h1>AI Development &amp;<br>Automation Roadmap</h1>
-      <p>From beginner to intermediate in 3 months — building real tools, automating workflows, and leveraging AI agents with Claude Code, MCP, and more.</p>
+      <h1>AI Driven Development</h1>
+      <p>Master the AI Agent Factory paradigm, build production agents, connect your entire tool stack via MCP, and ship end-to-end automation systems in 10 weeks.</p>
     </div>
 
     <!-- Tab nav -->
     <div class="tab-nav" role="tablist">
-      <button class="tab-btn m1 active" onclick="switchTab('m1',this)" role="tab">
+      <button class="tab-btn m1 active" onclick="switchTab('w1',this)" role="tab">
         <div class="tab-dot" style="background:var(--blue)"></div>
-        Month 1 — Foundations
+        Weeks 1–2: Foundations
       </button>
-      <button class="tab-btn m2" onclick="switchTab('m2',this)" role="tab">
+      <button class="tab-btn m2" onclick="switchTab('w2',this)" role="tab">
         <div class="tab-dot" style="background:var(--purple)"></div>
-        Month 2 — Building with AI
+        Weeks 3–4: Building
       </button>
-      <button class="tab-btn m3" onclick="switchTab('m3',this)" role="tab">
+      <button class="tab-btn m3" onclick="switchTab('w3',this)" role="tab">
         <div class="tab-dot" style="background:var(--teal)"></div>
-        Month 3 — Agents &amp; Systems
+        Weeks 6–7: Context & Specs
       </button>
-      <button class="tab-btn tools-tab" onclick="switchTab('tools',this)" role="tab">
+      <button class="tab-btn tools-tab" onclick="switchTab('w4',this)" role="tab">
         <div class="tab-dot" style="background:var(--orange)"></div>
-        Tools Stack
+        Weeks 8–9: Principles
       </button>
       <button class="tab-btn outcomes-tab" onclick="switchTab('outcomes',this)" role="tab">
         <div class="tab-dot" style="background:var(--green)"></div>
-        Outcomes
+        Week 10 & Outcomes
       </button>
     </div>
 
-    <!-- ── Month 1 ────────────────────────────────────────────── -->
+    <!-- ── Weeks 1-2 ─────────────────────────────────────────── -->
     <div class="content">
-      <div id="tab-m1" class="tab-panel m1 active">
+      <div id="tab-w1" class="tab-panel m1 active">
 
         <div class="month-header">
           <div class="month-meta">
-            <div class="month-label" style="color:var(--blue-light)">Month 1 · Weeks 1–4</div>
-            <div class="month-title">Foundations &amp; Automation</div>
-            <div class="month-goal"><strong>Goal:</strong> Set up your environment, master prompt engineering, and automate real agency workflows.</div>
+            <div class="month-label" style="color:var(--blue-light)">Weeks 1–2 · Foundation</div>
+            <div class="month-title">The AI Agent Factory Paradigm</div>
+            <div class="month-goal"><strong>Goal:</strong> Understand why AI fundamentally reshapes development, master the core concepts, and build your technical foundation.</div>
           </div>
           <div class="month-progress">
             <div class="progress-label">Progress</div>
             <div class="progress-bar"><div class="progress-fill" style="width:100%"></div></div>
-            <div class="progress-weeks" style="color:var(--blue-light)">4 Weeks</div>
+            <div class="progress-weeks" style="color:var(--blue-light)">2 Weeks</div>
           </div>
         </div>
 
         <div class="weeks-grid">
 
-          <div class="week-card m1 week-expanded">
-
-            <div class="week-header-row">
-              <div>
-                <div class="week-number" style="color:var(--blue-light)">Week 1</div>
-                <div class="week-title">Environment Setup + Prompt Mastery</div>
-              </div>
-              <span class="week-badge">Days 1–7</span>
-            </div>
-
-            <div class="w1-grid">
-
-              <!-- ── Left: Install + Terminal ── -->
-              <div class="w1-col">
-
-                <div class="step-section">
-                  <div class="step-section-title">Day 1–2 · Install Everything</div>
-
-                  <div class="step">
-                    <div class="step-num">1</div>
-                    <div class="step-body">
-                      <div class="step-label">Homebrew — macOS package manager</div>
-                      <div class="code-block">
-                        <span class="code-line">/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</span>
-                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="step">
-                    <div class="step-num">2</div>
-                    <div class="step-body">
-                      <div class="step-label">Node.js — required for Claude Code CLI</div>
-                      <div class="code-block">
-                        <span class="code-line">brew install node</span>
-                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                      </div>
-                      <div class="code-block" style="margin-top:6px">
-                        <span class="code-line">node --version &amp;&amp; npm --version</span>
-                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="step">
-                    <div class="step-num">3</div>
-                    <div class="step-body">
-                      <div class="step-label">Git — version control</div>
-                      <div class="code-block">
-                        <span class="code-line">brew install git</span>
-                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                      </div>
-                      <div class="code-block" style="margin-top:6px">
-                        <span class="code-line">git config --global user.name "Your Name"</span>
-                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                      </div>
-                      <div class="code-block" style="margin-top:6px">
-                        <span class="code-line">git config --global user.email "you@email.com"</span>
-                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="step">
-                    <div class="step-num">4</div>
-                    <div class="step-body">
-                      <div class="step-label">VS Code — code editor</div>
-                      <div class="code-block">
-                        <span class="code-line">brew install --cask visual-studio-code</span>
-                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="step">
-                    <div class="step-num">5</div>
-                    <div class="step-body">
-                      <div class="step-label">Claude Code CLI — your AI dev partner</div>
-                      <div class="code-block">
-                        <span class="code-line">npm install -g @anthropic-ai/claude-code</span>
-                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                      </div>
-                      <div class="code-block" style="margin-top:6px">
-                        <span class="code-line">claude</span>
-                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="step-section">
-                  <div class="step-section-title">Day 2–3 · Terminal Basics (7 Commands)</div>
-                  <div class="step-note-box">These 7 commands cover 90% of daily terminal use.</div>
-                  <div class="code-block">
-                    <span class="code-line"><span class="cmd-comment"># Where am I?</span>
-pwd
-<span class="cmd-comment"># List files</span>
-ls
-<span class="cmd-comment"># Go into a folder</span>
-cd Desktop
-<span class="cmd-comment"># Go back one level</span>
-cd ..
-<span class="cmd-comment"># Create a folder</span>
-mkdir my-project
-<span class="cmd-comment"># Open VS Code here</span>
-code .
-<span class="cmd-comment"># Clear screen</span>
-clear</span>
-                    <button class="copy-btn" style="align-self:flex-start" onclick="copyCode(this)">Copy</button>
-                  </div>
-                </div>
-
-              </div>
-
-              <!-- ── Right: Claude Code + Prompt Engineering ── -->
-              <div class="w1-col">
-
-                <div class="step-section">
-                  <div class="step-section-title">Day 3–4 · First Claude Code Session</div>
-
-                  <div class="step">
-                    <div class="step-num">1</div>
-                    <div class="step-body">
-                      <div class="step-label">Create project folder &amp; launch Claude</div>
-                      <div class="code-block">
-                        <span class="code-line">mkdir agency-ai &amp;&amp; cd agency-ai &amp;&amp; claude</span>
-                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="step">
-                    <div class="step-num">2</div>
-                    <div class="step-body">
-                      <div class="step-label">Give Claude your first prompt</div>
-                      <div class="prompt-box">
-                        <div class="prompt-box-label">Paste this into Claude Code →</div>
-                        <div class="prompt-box-text">Create a file called prompts.md with 5 marketing agency use cases for AI — include brief writing, ad copy, client report, social caption, and competitor research. Add a one-line example for each.</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="step">
-                    <div class="step-num">3</div>
-                    <div class="step-body">
-                      <div class="step-label">Iterate — ask Claude to improve</div>
-                      <div class="prompt-box">
-                        <div class="prompt-box-label">Follow-up prompt →</div>
-                        <div class="prompt-box-text">Add 5 more prompts for: proposal writing, landing page headline, email sequence intro, campaign strategy overview, and monthly performance recap for a client meeting.</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="step">
-                    <div class="step-num">4</div>
-                    <div class="step-body">
-                      <div class="step-label">Useful Claude Code slash commands</div>
-                      <div class="code-block">
-                        <span class="code-line"><span class="cmd-comment"># Inside Claude Code:</span>
-/help      <span class="cmd-comment"># see all commands</span>
-/clear     <span class="cmd-comment"># reset conversation</span>
-/cost      <span class="cmd-comment"># see token usage</span></span>
-                        <button class="copy-btn" style="align-self:flex-start" onclick="copyCode(this)">Copy</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="step-section">
-                  <div class="step-section-title">Day 4–5 · Prompt Engineering Formula</div>
-                  <div class="step-note-box">Use this 3-part structure for every prompt — better structure = better output.</div>
-
-                  <div class="prompt-formula">
-                    <div class="formula-part">
-                      <div class="formula-label">Role</div>
-                      <div class="formula-desc">You are a direct-response copywriter…</div>
-                    </div>
-                    <div class="formula-plus">+</div>
-                    <div class="formula-part">
-                      <div class="formula-label">Task</div>
-                      <div class="formula-desc">Write 3 Facebook ad variations for…</div>
-                    </div>
-                    <div class="formula-plus">+</div>
-                    <div class="formula-part">
-                      <div class="formula-label">Format</div>
-                      <div class="formula-desc">Max 100 words each, include CTA</div>
-                    </div>
-                  </div>
-
-                  <div class="step-section-title">Real Prompt Examples</div>
-
-                  <div class="prompt-box">
-                    <div class="prompt-box-label">Facebook Ad Copy</div>
-                    <div class="prompt-box-text">You are a direct-response copywriter. Write 3 Facebook ad variations for a local HVAC company targeting homeowners 35–65 in Phoenix, AZ. Offer: $49 summer tune-up. Include hook, benefit, CTA. Max 100 words each.</div>
-                  </div>
-
-                  <div class="prompt-box">
-                    <div class="prompt-box-label">Monthly Report Intro</div>
-                    <div class="prompt-box-text">Write a 2-paragraph executive summary for a monthly marketing report. Results: impressions +42%, leads +18%, cost-per-lead down $12. Tone: confident, data-driven, non-technical. No jargon.</div>
-                  </div>
-
-                </div>
-
-              </div>
-            </div>
-
-            <div class="deliverable">
-              <div class="deliverable-icon">🚀</div>
-              <div><strong>Deliverable</strong> A <code style="background:rgba(0,122,204,0.18);padding:1px 6px;border-radius:4px;font-size:11.5px;font-family:monospace">prompts.md</code> file with 10 tested agency prompts: brief, ad copy, proposal, report intro, 2× social caption, competitor research, email sequence, client update, landing page hook. Run every single one inside Claude Code.</div>
-            </div>
-
-            <div class="tag-row" style="margin-top:14px">
-              <span class="tag tag-blue">Homebrew</span>
-              <span class="tag tag-blue">Node.js</span>
-              <span class="tag tag-blue">Claude Code</span>
-              <span class="tag tag-blue">VS Code</span>
-              <span class="tag tag-blue">Prompt Engineering</span>
-            </div>
-
-          </div>
-
-          <div class="week-card m1 week-expanded">
-
-            <div class="week-header-row">
-              <div>
-                <div class="week-number" style="color:var(--blue-light)">Week 2</div>
-                <div class="week-title">No-Code Workflow Automation</div>
-              </div>
-              <span class="week-badge">Days 8–14</span>
-            </div>
-
-            <div class="w1-grid">
-
-              <!-- ── Left: Make / n8n Setup ── -->
-              <div class="w1-col">
-
-                <div class="step-section">
-                  <div class="step-section-title">Day 1–2 · Choose Your Automation Platform</div>
-
-                  <div class="step">
-                    <div class="step-num">1</div>
-                    <div class="step-body">
-                      <div class="step-label">Understand your options: Make vs. n8n vs. Zapier</div>
-                      <div class="prompt-box">
-                        <div class="prompt-box-label">Quick Comparison →</div>
-                        <div class="prompt-box-text"><strong>Make (Integromat):</strong> User-friendly, drag-drop, 1000+ apps, generous free tier. Best for visual learners. | <strong>n8n:</strong> Self-hosted, more control, better for custom logic, steeper curve. | <strong>Zapier:</strong> Most apps, pricey, simple workflows.</div>
-                      </div>
-                      <div class="step-note-box" style="margin-top:10px">For this roadmap: Start with <strong>Make</strong> — fastest to first automation.</div>
-                    </div>
-                  </div>
-
-                  <div class="step">
-                    <div class="step-num">2</div>
-                    <div class="step-body">
-                      <div class="step-label">Sign up for Make</div>
-                      <div class="code-block">
-                        <span class="code-line">Visit make.com → Sign up with email → Create free account</span>
-                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="step">
-                    <div class="step-num">3</div>
-                    <div class="step-body">
-                      <div class="step-label">Understand Make's interface: Scenarios, modules, connections</div>
-                      <div class="step-note-box">A <strong>Scenario</strong> = workflow. <strong>Modules</strong> = individual actions. <strong>Connections</strong> = authenticated links to apps like Gmail, Slack.</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="step-section">
-                  <div class="step-section-title">Day 2–3 · Connect Your First Apps</div>
-
-                  <div class="step">
-                    <div class="step-num">1</div>
-                    <div class="step-body">
-                      <div class="step-label">Connect Gmail — allow Make to read/send emails</div>
-                      <div class="step-note-box">In Make: Click "Create a new scenario" → Add Gmail module → Click + to add connection → Authorize with your Google account.</div>
-                    </div>
-                  </div>
-
-                  <div class="step">
-                    <div class="step-num">2</div>
-                    <div class="step-body">
-                      <div class="step-label">Connect Slack — for notifications &amp; message posting</div>
-                      <div class="step-note-box">In Make: Add Slack module → Create new connection → Install Make's Slack app to your workspace → Authorize.</div>
-                    </div>
-                  </div>
-
-                  <div class="step">
-                    <div class="step-num">3</div>
-                    <div class="step-body">
-                      <div class="step-label">Connect Google Sheets — data storage &amp; sync</div>
-                      <div class="step-note-box">In Make: Add Google Sheets module → Authorize → Choose which sheet your scenario will read/write to.</div>
-                    </div>
-                  </div>
-
-                  <div class="step">
-                    <div class="step-num">4</div>
-                    <div class="step-body">
-                      <div class="step-label">Test each connection</div>
-                      <div class="step-note-box">Each module has a "Test" button. Click it to verify Make can access the app.</div>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-
-              <!-- ── Right: First Automation + AI Integration ── -->
-              <div class="w1-col">
-
-                <div class="step-section">
-                  <div class="step-section-title">Day 3–4 · Build Your First Automation (No AI yet)</div>
-
-                  <div class="step">
-                    <div class="step-num">1</div>
-                    <div class="step-body">
-                      <div class="step-label">Scenario: When new email arrives, save to Sheets</div>
-                      <div class="step-note-box"><strong>Trigger:</strong> Gmail "Watch emails" → <strong>Action:</strong> Google Sheets "Add a row"</div>
-                    </div>
-                  </div>
-
-                  <div class="step">
-                    <div class="step-num">2</div>
-                    <div class="step-body">
-                      <div class="step-label">Set up the Gmail trigger</div>
-                      <div class="prompt-box">
-                        <div class="prompt-box-label">Step-by-step →</div>
-                        <div class="prompt-box-text">Add Gmail module → Choose "Watch emails" trigger → Select label (e.g., "Leads") → Test connection</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="step">
-                    <div class="step-num">3</div>
-                    <div class="step-body">
-                      <div class="step-label">Add the Sheets action</div>
-                      <div class="prompt-box">
-                        <div class="prompt-box-label">Step-by-step →</div>
-                        <div class="prompt-box-text">Click + to add module → Google Sheets → "Add a row" → Select spreadsheet → Map fields: From: {{From}}, Subject: {{Subject}}, Body: {{Text}}</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="step">
-                    <div class="step-num">4</div>
-                    <div class="step-body">
-                      <div class="step-label">Test the full flow end-to-end</div>
-                      <div class="step-note-box">Send a test email to your label → Check Sheets → Verify row was added automatically</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="step-section">
-                  <div class="step-section-title">Day 4–5 · Add AI: Claude API in a Workflow</div>
-
-                  <div class="step">
-                    <div class="step-num">1</div>
-                    <div class="step-body">
-                      <div class="step-label">Get your Anthropic API key</div>
-                      <div class="code-block">
-                        <span class="code-line">Visit console.anthropic.com → Create API key → Copy it</span>
-                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="step">
-                    <div class="step-num">2</div>
-                    <div class="step-body">
-                      <div class="step-label">Add HTTP request module to call Claude API</div>
-                      <div class="prompt-box">
-                        <div class="prompt-box-label">In Make →</div>
-                        <div class="prompt-box-text">Add "HTTP" module → Set Method: POST → URL: https://api.anthropic.com/v1/messages → Headers: Authorization: Bearer YOUR_KEY, Content-Type: application/json</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="step">
-                    <div class="step-num">3</div>
-                    <div class="step-body">
-                      <div class="step-label">Build the request body for Claude</div>
-                      <div class="code-block">
-                        <span class="code-line">{
-  "model": "claude-opus-4-7",
-  "max_tokens": 1024,
-  "messages": [
-    {
-      "role": "user",
-      "content": "{{emailBody}}"
-    }
-  ]
-}</span>
-                        <button class="copy-btn" style="align-self:flex-start" onclick="copyCode(this)">Copy</button>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="step">
-                    <div class="step-num">4</div>
-                    <div class="step-body">
-                      <div class="step-label">Use Claude's response in your next action</div>
-                      <div class="step-note-box">After HTTP module completes, add another Sheets row that includes {{http.data.content[0].text}} — Claude's response</div>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-            <div class="deliverable">
-              <div class="deliverable-icon">⚡</div>
-              <div><strong>Deliverable</strong> Two working Make scenarios: (1) New email → Sheets, (2) New email → Claude API for sentiment analysis → log result to Sheets</div>
-            </div>
-
-            <div class="tag-row" style="margin-top:14px">
-              <span class="tag tag-blue">Make</span>
-              <span class="tag tag-blue">n8n</span>
-              <span class="tag tag-blue">Claude API</span>
-              <span class="tag tag-blue">Gmail</span>
-              <span class="tag tag-blue">Sheets</span>
-            </div>
-
-          </div>
-
           <div class="week-card m1">
-            <div class="week-number" style="color:var(--blue-light)">Week 3</div>
-            <div class="week-title">Google Workspace Scripting</div>
+            <div class="week-number" style="color:var(--blue-light)">Week 1</div>
+            <div class="week-title">2025 AI Inflection & Core Concepts</div>
             <ul class="week-items">
-              <li>Google Apps Script — runs in browser, no install required</li>
-              <li>Automate Sheets, Docs, Gmail, Calendar, Forms</li>
-              <li>Trigger scripts on form submission or schedule</li>
-              <li>Fetch external data with UrlFetchApp</li>
+              <li>Evidence: ICPC scores, developer adoption metrics, LLM capabilities</li>
+              <li>Three fundamental LLM operational constraints: statelessness, probabilistic behavior, context windows</li>
+              <li>Evolution from coder to orchestrator role via OODA Loop</li>
+              <li>The Five Powers: See, Hear, Reason, Act, Remember</li>
             </ul>
             <div class="deliverable">
               <div class="deliverable-icon">📊</div>
-              <div><strong>Deliverable</strong>Auto-populate a client performance report from a Google Form submission</div>
+              <div><strong>Deliverable</strong> Written analysis: How AI changes your role and workflow</div>
             </div>
             <div class="tag-row">
-              <span class="tag tag-blue">Apps Script</span>
-              <span class="tag tag-blue">Google Sheets</span>
+              <span class="tag tag-blue">AI Fundamentals</span>
+              <span class="tag tag-blue">OODA Loop</span>
+              <span class="tag tag-blue">Five Powers</span>
             </div>
           </div>
 
           <div class="week-card m1">
-            <div class="week-number" style="color:var(--blue-light)">Week 4</div>
-            <div class="week-title">APIs &amp; Data Fundamentals</div>
+            <div class="week-number" style="color:var(--blue-light)">Week 2</div>
+            <div class="week-title">AI-Driven Development Architecture & Standards</div>
             <ul class="week-items">
-              <li>REST APIs, JSON, authentication (API keys, OAuth basics)</li>
-              <li>Call real APIs: Airtable, Google Analytics, HubSpot, Meta Ads</li>
-              <li>Use Claude Code to write and explain API scripts</li>
-              <li>Understand rate limits, pagination, and error codes</li>
+              <li>Three-layer AI development architecture</li>
+              <li>Ecosystem standards: MCP, AGENTS.md, Agent Skills</li>
+              <li>Nine pillars of AI-Driven Development</li>
+              <li>Digital FTE business model and enterprise market strategies</li>
+              <li>Specification-driven methodology to reduce rework</li>
             </ul>
             <div class="deliverable">
-              <div class="deliverable-icon">📈</div>
-              <div><strong>Deliverable</strong>Auto-pull live campaign metrics from APIs into a Google Sheet dashboard</div>
+              <div class="deliverable-icon">🏗️</div>
+              <div><strong>Deliverable</strong> Project structure: Your first AGENTS.md document</div>
             </div>
             <div class="tag-row">
-              <span class="tag tag-blue">REST API</span>
-              <span class="tag tag-blue">Airtable</span>
-              <span class="tag tag-blue">Analytics</span>
+              <span class="tag tag-blue">Architecture</span>
+              <span class="tag tag-blue">MCP</span>
+              <span class="tag tag-blue">Standards</span>
             </div>
           </div>
 
         </div>
       </div>
 
-      <!-- ── Month 2 ──────────────────────────────────────────── -->
-      <div id="tab-m2" class="tab-panel m2">
+      <!-- ── Weeks 3-5 ─────────────────────────────────────────── -->
+      <div id="tab-w2" class="tab-panel m2">
 
         <div class="month-header">
           <div class="month-meta">
-            <div class="month-label" style="color:var(--purple-light)">Month 2 · Weeks 5–8</div>
-            <div class="month-title">Building with AI</div>
-            <div class="month-goal"><strong>Goal:</strong> Write and ship real tools using AI as your co-developer — from single pages to full web apps.</div>
+            <div class="month-label" style="color:var(--purple-light)">Weeks 3–4 · Building</div>
+            <div class="month-title">General Agents & Communication Mastery</div>
+            <div class="month-goal"><strong>Goal:</strong> Master markdown-based instruction writing and deploy your first general agents with Claude Code.</div>
           </div>
           <div class="month-progress">
             <div class="progress-label">Progress</div>
             <div class="progress-bar"><div class="progress-fill" style="width:100%; background:linear-gradient(90deg,var(--purple),var(--purple-light))"></div></div>
-            <div class="progress-weeks" style="color:var(--purple-light)">4 Weeks</div>
+            <div class="progress-weeks" style="color:var(--purple-light)">2 Weeks</div>
           </div>
         </div>
 
         <div class="weeks-grid">
 
           <div class="week-card m2">
-            <div class="week-number" style="color:var(--purple-light)">Week 5</div>
-            <div class="week-title">Vibe Coding Workflow</div>
+            <div class="week-number" style="color:var(--purple-light)">Week 3</div>
+            <div class="week-title">Markdown — Writing Instructions for AI</div>
             <ul class="week-items">
-              <li>VS Code + GitHub Copilot for real-time autocomplete</li>
-              <li>Claude Code CLI — multi-file editing, context management</li>
-              <li>Learn to review AI code, catch bugs, iterate fast</li>
-              <li>Cursor IDE — tab completion, inline chat, composer mode</li>
-              <li>Using Bolt.new and v0 for rapid prototyping</li>
+              <li>Structural elements: headings, lists, nested organization</li>
+              <li>Code formatting and documentation blocks</li>
+              <li>Media integration: links, images, tables</li>
+              <li>Creating AGENTS.md and SKILL.md documentation</li>
+              <li>AI-optimized instruction writing patterns</li>
             </ul>
             <div class="deliverable">
-              <div class="deliverable-icon">🛠️</div>
-              <div><strong>Deliverable</strong>Client intake form with validation — data saved to Airtable via API</div>
+              <div class="deliverable-icon">📝</div>
+              <div><strong>Deliverable</strong> Comprehensive AGENTS.md documenting your first agent</div>
             </div>
             <div class="tag-row">
-              <span class="tag tag-purple">Claude Code</span>
-              <span class="tag tag-purple">Cursor</span>
-              <span class="tag tag-purple">Copilot</span>
+              <span class="tag tag-purple">Markdown</span>
+              <span class="tag tag-purple">Documentation</span>
             </div>
           </div>
 
           <div class="week-card m2">
-            <div class="week-number" style="color:var(--purple-light)">Week 6</div>
-            <div class="week-title">Frontend + Deployment</div>
+            <div class="week-number" style="color:var(--purple-light)">Week 4</div>
+            <div class="week-title">Claude Code & General Agents Setup</div>
             <ul class="week-items">
-              <li>HTML, CSS, JavaScript — understand structure, not memorize</li>
-              <li>Next.js basics — pages, routing, components, Tailwind CSS</li>
-              <li>Deploy to Vercel in minutes with Git integration</li>
-              <li>Environment variables, domains, and preview deployments</li>
-            </ul>
-            <div class="deliverable">
-              <div class="deliverable-icon">🌐</div>
-              <div><strong>Deliverable</strong>Live agency landing page or internal tool page deployed on Vercel</div>
-            </div>
-            <div class="tag-row">
-              <span class="tag tag-purple">Next.js</span>
-              <span class="tag tag-purple">Tailwind</span>
-              <span class="tag tag-purple">Vercel</span>
-            </div>
-          </div>
-
-          <div class="week-card m2">
-            <div class="week-number" style="color:var(--purple-light)">Week 7</div>
-            <div class="week-title">Backend + Database</div>
-            <ul class="week-items">
-              <li>Supabase — database, auth, storage (no DevOps required)</li>
-              <li>API routes in Next.js — server-side logic</li>
-              <li>User authentication with Clerk or Supabase Auth</li>
-              <li>Row-level security, real-time subscriptions basics</li>
-            </ul>
-            <div class="deliverable">
-              <div class="deliverable-icon">🔐</div>
-              <div><strong>Deliverable</strong>Login-protected client portal showing live project status</div>
-            </div>
-            <div class="tag-row">
-              <span class="tag tag-purple">Supabase</span>
-              <span class="tag tag-purple">Clerk</span>
-              <span class="tag tag-purple">Auth</span>
-            </div>
-          </div>
-
-          <div class="week-card m2">
-            <div class="week-number" style="color:var(--purple-light)">Week 8</div>
-            <div class="week-title">AI-Powered Web App</div>
-            <ul class="week-items">
-              <li>Integrate Claude API or OpenAI into a Next.js app</li>
-              <li>Streaming responses, prompt templates, system prompts</li>
-              <li>Handle errors, rate limits, and loading states gracefully</li>
-              <li>Bake agency brand voice into the system prompt</li>
+              <li>Claude Code CLI installation and configuration</li>
+              <li>CLAUDE.md persistent project context</li>
+              <li>MCP server integration basics</li>
+              <li>Agent loop: perceive → plan → act → observe</li>
+              <li>Building simple agents with 2–3 tools</li>
             </ul>
             <div class="deliverable">
               <div class="deliverable-icon">🤖</div>
-              <div><strong>Deliverable</strong>Internal AI tool: brief generator, proposal drafter, or ad copy writer with brand voice</div>
+              <div><strong>Deliverable</strong> First working agent with Claude Code</div>
             </div>
             <div class="tag-row">
-              <span class="tag tag-purple">Claude API</span>
-              <span class="tag tag-purple">Streaming</span>
-              <span class="tag tag-purple">OpenAI</span>
+              <span class="tag tag-purple">Claude Code</span>
+              <span class="tag tag-purple">Agents</span>
             </div>
           </div>
 
         </div>
       </div>
 
-      <!-- ── Month 3 ──────────────────────────────────────────── -->
-      <div id="tab-m3" class="tab-panel m3">
+      <!-- ── Weeks 6-7 ─────────────────────────────────────────── -->
+      <div id="tab-w3" class="tab-panel m3">
 
         <div class="month-header">
           <div class="month-meta">
-            <div class="month-label" style="color:var(--teal-light)">Month 3 · Weeks 9–12</div>
-            <div class="month-title">Agents, MCPs &amp; Full Systems</div>
-            <div class="month-goal"><strong>Goal:</strong> Build autonomous AI agents, connect tools via MCP, orchestrate subagents, and ship end-to-end automation systems.</div>
+            <div class="month-label" style="color:var(--teal-light)">Weeks 6–7 · Production Quality</div>
+            <div class="month-title">Context Engineering & Spec-Driven Development</div>
+            <div class="month-goal"><strong>Goal:</strong> Write specifications that reduce rework, engineer reliable agent contexts, and build production-grade systems.</div>
           </div>
           <div class="month-progress">
             <div class="progress-label">Progress</div>
             <div class="progress-bar"><div class="progress-fill" style="width:100%; background:linear-gradient(90deg,var(--teal),var(--teal-light))"></div></div>
-            <div class="progress-weeks" style="color:var(--teal-light)">4 Weeks</div>
+            <div class="progress-weeks" style="color:var(--teal-light)">2 Weeks</div>
           </div>
         </div>
-
-        <!-- MCP / Agents explainer -->
-        <div class="agent-section">
-          <div class="agent-section-title">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M3 12h3m12 0h3M12 3v3m0 12v3m-6.4-2.6L6.7 17m10.6-10.6L15.3 7M5.6 17.4l1.8-1.8m9.2-9.2 1.8-1.8"/></svg>
-            Core AI Concepts: Agents · Subagents · MCP
-          </div>
-          <div class="agent-grid">
-            <div class="agent-card">
-              <div class="agent-card-icon">🤖</div>
-              <h4>AI Agents</h4>
-              <p>Programs that perceive input, decide what to do, and take actions in a loop — using tools, memory, and goals rather than just responding to a single prompt.</p>
-            </div>
-            <div class="agent-card">
-              <div class="agent-card-icon">🪆</div>
-              <h4>Subagents</h4>
-              <p>Specialized agents spun up by a parent (orchestrator) agent to handle specific tasks in parallel — e.g., one researches, another writes, a third formats and sends.</p>
-            </div>
-            <div class="agent-card">
-              <div class="agent-card-icon">🔌</div>
-              <h4>MCP (Model Context Protocol)</h4>
-              <p>An open standard that lets AI models connect to external tools, databases, APIs, and services through a unified interface — like USB-C for AI capabilities.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="section-divider"><span>Week by Week</span></div>
 
         <div class="weeks-grid">
 
           <div class="week-card m3">
-            <div class="week-number" style="color:var(--teal-light)">Week 9</div>
-            <div class="week-title">AI Agents &amp; Tool Use</div>
+            <div class="week-number" style="color:var(--teal-light)">Week 6</div>
+            <div class="week-title">Effective Context Engineering</div>
             <ul class="week-items">
-              <li>Understand the agent loop: perceive → plan → act → observe</li>
-              <li>Claude tool use / function calling — give AI the ability to act</li>
-              <li>Build a simple agent with 2–3 tools (web search, email, file)</li>
-              <li>Handle multi-turn conversations and memory in agent context</li>
-              <li>Error recovery — what happens when tools fail</li>
+              <li>Context assessment framework for reliability</li>
+              <li>U-shaped attention curve principles in prompts</li>
+              <li>Position sensitivity research applications</li>
+              <li>Multi-agent coordination patterns</li>
+              <li>Compression-resilient prompt design</li>
+              <li>Output validation and verification strategies</li>
             </ul>
             <div class="deliverable">
-              <div class="deliverable-icon">🔎</div>
-              <div><strong>Deliverable</strong>Agent that researches a prospect company and drafts a personalized outreach proposal</div>
+              <div class="deliverable-icon">🎯</div>
+              <div><strong>Deliverable</strong> Documented context engineering framework for your agents</div>
             </div>
             <div class="tag-row">
-              <span class="tag tag-teal">Tool Use</span>
-              <span class="tag tag-teal">Claude API</span>
-              <span class="tag tag-teal">Agents</span>
+              <span class="tag tag-teal">Prompting</span>
+              <span class="tag tag-teal">Context</span>
             </div>
           </div>
 
           <div class="week-card m3">
-            <div class="week-number" style="color:var(--teal-light)">Week 10</div>
-            <div class="week-title">MCP Servers &amp; Connections</div>
+            <div class="week-number" style="color:var(--teal-light)">Week 7</div>
+            <div class="week-title">Specification-Driven Development</div>
             <ul class="week-items">
-              <li>What is MCP — how it standardizes AI tool connections</li>
-              <li>Connect Claude Code to MCP servers: filesystem, browser, Slack</li>
-              <li>Configure MCP in Claude Code settings (claude_desktop_config.json)</li>
-              <li>Build a custom MCP server for your agency (client data, briefs)</li>
-              <li>Connect existing tools: Notion MCP, GitHub MCP, Airtable MCP</li>
+              <li>Specifications-first methodology to eliminate rework</li>
+              <li>Feature specification writing for agents</li>
+              <li>Persistent memory systems across sessions</li>
+              <li>Task orchestration and dependency handling</li>
+              <li>Validation and review workflows</li>
+              <li>Building with constraints and safety guardrails</li>
             </ul>
             <div class="deliverable">
-              <div class="deliverable-icon">🔌</div>
-              <div><strong>Deliverable</strong>Claude connected via MCP to your agency's Notion workspace — query and update it by chat</div>
+              <div class="deliverable-icon">📋</div>
+              <div><strong>Deliverable</strong> Complete specifications for a complex agent system</div>
             </div>
             <div class="tag-row">
-              <span class="tag tag-teal">MCP</span>
-              <span class="tag tag-teal">Claude Code</span>
-              <span class="tag tag-teal">Notion</span>
-            </div>
-          </div>
-
-          <div class="week-card m3">
-            <div class="week-number" style="color:var(--teal-light)">Week 11</div>
-            <div class="week-title">Subagents &amp; Orchestration</div>
-            <ul class="week-items">
-              <li>Orchestrator vs. worker agent pattern — who directs who</li>
-              <li>Claude Code subagents — spawn parallel agents for subtasks</li>
-              <li>Pass context and results between agents cleanly</li>
-              <li>Build multi-agent pipelines using n8n or custom code</li>
-              <li>Rate limiting, cost control, and subagent error handling</li>
-            </ul>
-            <div class="deliverable">
-              <div class="deliverable-icon">🪆</div>
-              <div><strong>Deliverable</strong>Orchestrator agent that runs: Research Agent → Copywriter Agent → Formatter Agent for campaign briefs</div>
-            </div>
-            <div class="tag-row">
-              <span class="tag tag-teal">Subagents</span>
-              <span class="tag tag-teal">Orchestration</span>
-              <span class="tag tag-teal">Pipelines</span>
-            </div>
-          </div>
-
-          <div class="week-card m3">
-            <div class="week-number" style="color:var(--teal-light)">Week 12</div>
-            <div class="week-title">Internal Knowledge Base (RAG) + Full Stack Review</div>
-            <ul class="week-items">
-              <li>RAG (Retrieval-Augmented Generation) — AI answers from your own docs</li>
-              <li>Tools: Dify, Flowise, or Supabase + pgvector</li>
-              <li>Feed it SOPs, brand guidelines, past proposals, client notes</li>
-              <li>Audit all automations built — logging, monitoring, alerts</li>
-              <li>PostHog or Plausible for usage tracking on built tools</li>
-            </ul>
-            <div class="deliverable">
-              <div class="deliverable-icon">🧠</div>
-              <div><strong>Deliverable</strong>Private AI assistant trained on agency docs + 5+ live automation systems running the agency</div>
-            </div>
-            <div class="tag-row">
-              <span class="tag tag-teal">RAG</span>
-              <span class="tag tag-teal">Dify</span>
-              <span class="tag tag-teal">Flowise</span>
-              <span class="tag tag-teal">Supabase</span>
+              <span class="tag tag-teal">Specs</span>
+              <span class="tag tag-teal">Documentation</span>
             </div>
           </div>
 
         </div>
       </div>
 
-      <!-- ── Tools Stack ──────────────────────────────────────── -->
-      <div id="tab-tools" class="tab-panel tools-tab">
+      <!-- ── Weeks 8-9 ─────────────────────────────────────────── -->
+      <div id="tab-w4" class="tab-panel tools-tab">
 
         <div class="month-header">
           <div class="month-meta">
-            <div class="month-label" style="color:var(--orange-light)">Full Stack</div>
-            <div class="month-title">Tools &amp; Technologies</div>
-            <div class="month-goal">Every tool you'll use across the 3-month program — chosen for speed, power, and practical agency use.</div>
+            <div class="month-label" style="color:var(--orange-light)">Weeks 8–9 · Principles & Advanced</div>
+            <div class="month-title">Problem Solving Principles & Team Workflows</div>
+            <div class="month-goal"><strong>Goal:</strong> Master the seven core principles for reliable agent design and operate effectively in team environments.</div>
+          </div>
+          <div class="month-progress">
+            <div class="progress-label">Progress</div>
+            <div class="progress-bar"><div class="progress-fill" style="width:100%; background:linear-gradient(90deg,var(--orange),var(--orange-light))"></div></div>
+            <div class="progress-weeks" style="color:var(--orange-light)">2 Weeks</div>
           </div>
         </div>
 
-        <div class="tools-grid">
+        <div class="weeks-grid">
 
-          <div class="tool-category">
-            <div class="tool-cat-header">
-              <div class="tool-cat-icon" style="background:rgba(0,122,204,0.15)">🤖</div>
-              <div class="tool-cat-name">AI Coding</div>
+          <div class="week-card tools-tab">
+            <div class="week-number" style="color:var(--orange-light)">Week 8</div>
+            <div class="week-title">Seven Principles of General Agent Problem Solving</div>
+            <ul class="week-items">
+              <li>Principle 1: Shell leverage as universal tool</li>
+              <li>Principle 2: Code as universal interface</li>
+              <li>Principle 3: Verification embedded in workflows</li>
+              <li>Principle 4: Small reversible decomposition</li>
+              <li>Principle 5: File-based state persistence</li>
+              <li>Principle 6: Constraints and safety guardrails</li>
+              <li>Principle 7: Logging and observability</li>
+            </ul>
+            <div class="deliverable">
+              <div class="deliverable-icon">🔑</div>
+              <div><strong>Deliverable</strong> Redesigned agent system applying all seven principles</div>
             </div>
-            <div class="tool-tags">
-              <span class="tool-tag">Claude Code CLI</span>
-              <span class="tool-tag">GitHub Copilot</span>
-              <span class="tool-tag">Cursor IDE</span>
-              <span class="tool-tag">Bolt.new</span>
-              <span class="tool-tag">v0 by Vercel</span>
+            <div class="tag-row">
+              <span class="tag tag-orange">Principles</span>
+              <span class="tag tag-orange">Best Practices</span>
             </div>
           </div>
 
-          <div class="tool-category">
-            <div class="tool-cat-header">
-              <div class="tool-cat-icon" style="background:rgba(0,204,255,0.15)">⚡</div>
-              <div class="tool-cat-name">Automation</div>
+          <div class="week-card tools-tab">
+            <div class="week-number" style="color:var(--orange-light)">Week 9</div>
+            <div class="week-title">Team Workflows, CI/CD & Advanced Configuration</div>
+            <ul class="week-items">
+              <li>Team workflow patterns with shared context</li>
+              <li>Continuous integration approaches for agent systems</li>
+              <li>Production deployment strategies</li>
+              <li>Enterprise MCP configurations and scaling</li>
+              <li>Security, permissions, and audit controls</li>
+              <li>Monitoring and alerting for production agents</li>
+            </ul>
+            <div class="deliverable">
+              <div class="deliverable-icon">👥</div>
+              <div><strong>Deliverable</strong> Team-ready agent deployment with CI/CD pipeline</div>
             </div>
-            <div class="tool-tags">
-              <span class="tool-tag">Make (Integromat)</span>
-              <span class="tool-tag">n8n</span>
-              <span class="tool-tag">Zapier</span>
-              <span class="tool-tag">Apps Script</span>
-            </div>
-          </div>
-
-          <div class="tool-category">
-            <div class="tool-cat-header">
-              <div class="tool-cat-icon" style="background:rgba(255,107,0,0.15)">🌐</div>
-              <div class="tool-cat-name">Frontend</div>
-            </div>
-            <div class="tool-tags">
-              <span class="tool-tag">Next.js</span>
-              <span class="tool-tag">Tailwind CSS</span>
-              <span class="tool-tag">Vercel</span>
-              <span class="tool-tag">React</span>
-            </div>
-          </div>
-
-          <div class="tool-category">
-            <div class="tool-cat-header">
-              <div class="tool-cat-icon" style="background:rgba(255,69,0,0.15)">🗄️</div>
-              <div class="tool-cat-name">Backend / Database</div>
-            </div>
-            <div class="tool-tags">
-              <span class="tool-tag">Supabase</span>
-              <span class="tool-tag">Airtable</span>
-              <span class="tool-tag">Clerk</span>
-              <span class="tool-tag">Railway</span>
-            </div>
-          </div>
-
-          <div class="tool-category">
-            <div class="tool-cat-header">
-              <div class="tool-cat-icon" style="background:rgba(255,107,0,0.15)">🔌</div>
-              <div class="tool-cat-name">MCP Servers</div>
-            </div>
-            <div class="tool-tags">
-              <span class="tool-tag">Filesystem MCP</span>
-              <span class="tool-tag">Browser MCP</span>
-              <span class="tool-tag">Notion MCP</span>
-              <span class="tool-tag">GitHub MCP</span>
-              <span class="tool-tag">Airtable MCP</span>
-              <span class="tool-tag">Slack MCP</span>
-            </div>
-          </div>
-
-          <div class="tool-category">
-            <div class="tool-cat-header">
-              <div class="tool-cat-icon" style="background:rgba(255,107,0,0.15)">🪆</div>
-              <div class="tool-cat-name">Agents &amp; Orchestration</div>
-            </div>
-            <div class="tool-tags">
-              <span class="tool-tag">Claude Agents</span>
-              <span class="tool-tag">Claude Subagents</span>
-              <span class="tool-tag">LangChain</span>
-              <span class="tool-tag">LangGraph</span>
-            </div>
-          </div>
-
-          <div class="tool-category">
-            <div class="tool-cat-header">
-              <div class="tool-cat-icon" style="background:rgba(245,165,36,0.15)">🧠</div>
-              <div class="tool-cat-name">AI Builders (RAG)</div>
-            </div>
-            <div class="tool-tags">
-              <span class="tool-tag">Dify</span>
-              <span class="tool-tag">Flowise</span>
-              <span class="tool-tag">pgvector</span>
-              <span class="tool-tag">LlamaIndex</span>
-            </div>
-          </div>
-
-          <div class="tool-category">
-            <div class="tool-cat-header">
-              <div class="tool-cat-icon" style="background:rgba(0,122,204,0.15)">🤝</div>
-              <div class="tool-cat-name">AI APIs</div>
-            </div>
-            <div class="tool-tags">
-              <span class="tool-tag">Anthropic Claude</span>
-              <span class="tool-tag">OpenAI</span>
-              <span class="tool-tag">Gemini</span>
-            </div>
-          </div>
-
-          <div class="tool-category">
-            <div class="tool-cat-header">
-              <div class="tool-cat-icon" style="background:rgba(245,165,36,0.15)">📊</div>
-              <div class="tool-cat-name">Analytics</div>
-            </div>
-            <div class="tool-tags">
-              <span class="tool-tag">PostHog</span>
-              <span class="tool-tag">Plausible</span>
-              <span class="tool-tag">Google Analytics</span>
+            <div class="tag-row">
+              <span class="tag tag-orange">Teams</span>
+              <span class="tag tag-orange">CI/CD</span>
+              <span class="tag tag-orange">Production</span>
             </div>
           </div>
 
         </div>
-
-        <div class="section-divider"><span>Weekly Commitment</span></div>
-
-        <div class="commitment-grid">
-          <div class="commit-card">
-            <div class="commit-time">2–3 hrs</div>
-            <div class="commit-label">Per Day Building &amp; Experimenting</div>
-          </div>
-          <div class="commit-card">
-            <div class="commit-time">1 hr</div>
-            <div class="commit-label">Per Week — Review What Broke, Fix It</div>
-          </div>
-          <div class="commit-card">
-            <div class="commit-time">1 hr</div>
-            <div class="commit-label">Per Week — Plan Next Week's Deliverable</div>
-          </div>
-        </div>
-
-        <div style="margin-top:16px; padding:16px 20px; background:rgba(255,69,0,0.08); border:1px solid rgba(255,69,0,0.2); border-radius:var(--radius-sm);">
-          <div style="font-size:13px; color:var(--orange-light); font-weight:700; margin-bottom:4px;">Rule: Every week ships something live.</div>
-          <div style="font-size:13px; color:var(--text-2);">No theory-only weeks. Every week ends with a deployed, usable deliverable that solves a real agency problem.</div>
-        </div>
-
       </div>
 
-      <!-- ── Outcomes ────────────────────────────────────────── -->
+      <!-- ── Week 10 & Outcomes ────────────────────────────────── -->
       <div id="tab-outcomes" class="tab-panel outcomes-tab">
 
         <div class="month-header">
           <div class="month-meta">
-            <div class="month-label" style="color:var(--dc-amber)">3-Month Results</div>
-            <div class="month-title">What You'll Be Able to Do</div>
-            <div class="month-goal">By the end of 3 months, you'll operate at a level most agencies take years to reach — independently building, automating, and scaling with AI.</div>
+            <div class="month-label" style="color:var(--dc-amber)">Week 10 & Beyond</div>
+            <div class="month-title">Integration, Deployment & Career Path</div>
+            <div class="month-goal"><strong>Goal:</strong> Integrate all learning into production systems, understand monetization models, and chart your path forward.</div>
           </div>
         </div>
+
+        <div class="weeks-grid">
+          <div class="week-card outcomes-tab">
+            <div class="week-number" style="color:var(--green-light)">Week 10</div>
+            <div class="week-title">Full-Stack Agent Systems & Market Strategy</div>
+            <ul class="week-items">
+              <li>Multi-agent orchestration at scale</li>
+              <li>MCP ecosystem mastery and custom server development</li>
+              <li>Digital FTE monetization and pricing models</li>
+              <li>Marketing AI-driven solutions to enterprise</li>
+              <li>Building agents as product vs. service</li>
+            </ul>
+            <div class="deliverable">
+              <div class="deliverable-icon">🚀</div>
+              <div><strong>Deliverable</strong> Complete agent-powered system ready for market or internal deployment</div>
+            </div>
+            <div class="tag-row">
+              <span class="tag tag-green">Architecture</span>
+              <span class="tag tag-green">Business</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-divider"><span>Learning Outcomes</span></div>
 
         <div class="outcome-list">
 
           <div class="outcome-item">
             <div class="outcome-num">1</div>
             <div class="outcome-text">
-              <strong>Build &amp; deploy internal web tools independently</strong>
-              Create client portals, dashboards, and internal tools using Next.js, Supabase, and Vercel — without waiting on a developer.
+              <strong>Present evidence for why AI reshapes development</strong>
+              Understand the 2025 inflection point, capabilities, and constraints that fundamentally change how you build software.
             </div>
           </div>
 
           <div class="outcome-item">
             <div class="outcome-num">2</div>
             <div class="outcome-text">
-              <strong>Automate any repeatable agency workflow</strong>
-              Connect apps with Make/n8n, trigger AI tasks automatically, and replace hours of manual work with flows that run 24/7.
+              <strong>Differentiate and select appropriate agent types</strong>
+              Know when to use general agents vs. custom agents, and make architectural decisions based on requirements.
             </div>
           </div>
 
           <div class="outcome-item">
             <div class="outcome-num">3</div>
             <div class="outcome-text">
-              <strong>Build and orchestrate AI agents with subagents</strong>
-              Design multi-agent pipelines where an orchestrator delegates research, writing, formatting, and delivery to specialized subagents in parallel.
+              <strong>Implement the Five Powers framework</strong>
+              Build agents that See (perception), Hear (input), Reason (decision), Act (execution), and Remember (state).
             </div>
           </div>
 
           <div class="outcome-item">
             <div class="outcome-num">4</div>
             <div class="outcome-text">
-              <strong>Connect AI to your entire tool stack via MCP</strong>
-              Use Model Context Protocol to give Claude direct access to Notion, GitHub, Airtable, Slack, and your own internal data — all through conversation.
+              <strong>Master AIFF standards and ecosystem</strong>
+              Work fluently with MCP, AGENTS.md, SKILL.md, and contribute to the open AI development ecosystem.
             </div>
           </div>
 
           <div class="outcome-item">
             <div class="outcome-num">5</div>
             <div class="outcome-text">
-              <strong>Integrate AI into client deliverables and operations</strong>
-              Embed AI into proposals, reports, content pipelines, and client portals — making AI a visible differentiator for your agency.
+              <strong>Execute specification-driven development</strong>
+              Write specs that prevent rework, design reliable systems, and deliver from conception through production.
             </div>
           </div>
 
           <div class="outcome-item">
             <div class="outcome-num">6</div>
             <div class="outcome-text">
-              <strong>Direct AI to write, debug, and ship code at speed</strong>
-              Use Claude Code CLI and Cursor to plan, write, review, and deploy code — treating AI as a senior developer pair-programming partner.
+              <strong>Apply seven core problem-solving principles</strong>
+              Build safe, reliable, observable agent systems that scale and maintain in production.
             </div>
           </div>
 
           <div class="outcome-item">
             <div class="outcome-num">7</div>
             <div class="outcome-text">
-              <strong>Run meaningful agency operations on autopilot</strong>
-              Onboarding flows, reporting, lead follow-up, content scheduling, and brief generation — all automated with AI-powered systems.
+              <strong>Create sustainable monetization models</strong>
+              Understand Digital FTE, pricing strategies, and market positioning for AI-driven solutions.
+            </div>
+          </div>
+
+          <div class="outcome-item">
+            <div class="outcome-num">8</div>
+            <div class="outcome-text">
+              <strong>Market AI solutions to enterprise</strong>
+              Position and sell agent-powered systems to organizations at scale ($100–400B market opportunity).
+            </div>
+          </div>
+
+          <div class="outcome-item">
+            <div class="outcome-num">9</div>
+            <div class="outcome-text">
+              <strong>Construct production-quality agent pipelines</strong>
+              Deploy, monitor, scale, and maintain multi-agent systems with Claude Code and Cowork.
             </div>
           </div>
 
         </div>
 
-        <div class="section-divider"><span>Learning Principles</span></div>
+        <div class="section-divider"><span>Target Audience</span></div>
 
         <div class="weeks-grid">
-          <div class="full-card" style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:20px; margin:0">
-            <h3>Build to Solve Real Problems</h3>
-            <p>Every exercise automates an actual agency pain point — no toy projects.</p>
-            <div class="tag-row"><span class="tag tag-green">Principle 1</span></div>
+          <div class="full-card">
+            <h3>Who This Course Is For</h3>
+            <p><strong>Software developers</strong> transitioning to AI-native practices. <strong>Technical leads</strong> and engineering managers. <strong>Independent consultants</strong> offering AI services. <strong>AI product entrepreneurs</strong> scaling ideas. <strong>CS graduates</strong> seeking competitive advantage.</p>
+            <div class="tag-row">
+              <span class="tag tag-green">Intermediate+</span>
+              <span class="tag tag-green">Hands-On</span>
+              <span class="tag tag-green">Production-Ready</span>
+            </div>
           </div>
-          <div class="full-card" style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:20px; margin:0">
-            <h3>Don't Memorize Code — Direct AI</h3>
-            <p>Learn to give precise instructions, review output, and iterate. The skill is delegation, not syntax.</p>
-            <div class="tag-row"><span class="tag tag-green">Principle 2</span></div>
-          </div>
-          <div class="full-card" style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:20px; margin:0">
-            <h3>One Workflow at a Time</h3>
-            <p>Fully automate one process before moving on. Depth beats breadth.</p>
-            <div class="tag-row"><span class="tag tag-green">Principle 3</span></div>
-          </div>
-          <div class="full-card" style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:20px; margin:0">
-            <h3>Document Everything</h3>
-            <p>Write brief SOPs for every automation — what it does, why, and how to maintain it.</p>
-            <div class="tag-row"><span class="tag tag-green">Principle 4</span></div>
+          <div class="full-card">
+            <h3>Prerequisites</h3>
+            <p>Basic coding experience (any language). Familiarity with APIs and terminal/command line. Willingness to learn AI-native development patterns. 10–15 hours per week commitment over 10 weeks.</p>
+            <div class="tag-row">
+              <span class="tag tag-green">Self-Paced</span>
+              <span class="tag tag-green">Practical</span>
+            </div>
           </div>
         </div>
 
@@ -2018,83 +1043,6 @@ clear</span>
       setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
     });
   }
-
-  function mkChevron(cls) {
-    const ns = 'http://www.w3.org/2000/svg';
-    const svg = document.createElementNS(ns, 'svg');
-    svg.setAttribute('class', cls);
-    svg.setAttribute('viewBox', '0 0 24 24');
-    svg.setAttribute('fill', 'none');
-    svg.setAttribute('stroke', 'currentColor');
-    svg.setAttribute('stroke-width', '2.5');
-    svg.setAttribute('stroke-linecap', 'round');
-    svg.setAttribute('stroke-linejoin', 'round');
-    const p = document.createElementNS(ns, 'polyline');
-    p.setAttribute('points', '6 9 12 15 18 9');
-    svg.appendChild(p);
-    return svg;
-  }
-
-  function initAccordion() {
-    /* ── Level 1: Week cards ─────────────────────────────── */
-    document.querySelectorAll('.week-card').forEach(card => {
-      const existingHdrRow = card.querySelector('.week-header-row');
-      const weekNum        = card.querySelector('.week-number');
-      const weekTitle      = card.querySelector('.week-title');
-
-      const hdr = document.createElement('div');
-      hdr.className = 'week-card-header';
-
-      if (existingHdrRow) {
-        card.insertBefore(hdr, existingHdrRow);
-        hdr.appendChild(existingHdrRow);
-      } else {
-        const grp = document.createElement('div');
-        card.insertBefore(hdr, weekNum);
-        grp.appendChild(weekNum);
-        grp.appendChild(weekTitle);
-        hdr.appendChild(grp);
-      }
-      hdr.appendChild(mkChevron('week-chevron'));
-
-      const body  = document.createElement('div');
-      body.className = 'week-body';
-      const inner = document.createElement('div');
-      inner.className = 'week-body-inner';
-      body.appendChild(inner);
-      while (card.children.length > 1) inner.appendChild(card.children[1]);
-      card.appendChild(body);
-
-      hdr.addEventListener('click', () => {
-        const open = body.classList.toggle('open');
-        card.classList.toggle('expanded', open);
-      });
-    });
-
-    /* ── Level 2: Day / step sections ───────────────────── */
-    document.querySelectorAll('.step-section').forEach(section => {
-      const title = section.querySelector('.step-section-title');
-      if (!title) return;
-
-      title.appendChild(mkChevron('section-chevron'));
-
-      const body  = document.createElement('div');
-      body.className = 'step-section-body';
-      const inner = document.createElement('div');
-      inner.className = 'step-section-inner';
-      body.appendChild(inner);
-      while (section.children.length > 1) inner.appendChild(section.children[1]);
-      section.appendChild(body);
-
-      title.addEventListener('click', e => {
-        e.stopPropagation();
-        const open = body.classList.toggle('open');
-        title.classList.toggle('expanded', open);
-      });
-    });
-  }
-
-  initAccordion();
 </script>
 
 </body>
